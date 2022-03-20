@@ -1,7 +1,7 @@
 import clang.cindex
 
 def traverse_tree(node, level):
-    if node.location.line == 48 and node.kind == clang.cindex.CursorKind.IF_STMT:
+    if node.location.line == 50 and node.kind == clang.cindex.CursorKind.IF_STMT:
         print("stop")
     if not list(node.get_children()):
         print(f"############################## {level}") 

@@ -7,13 +7,13 @@ struct State {
     double yf1;
     double thetaf1;
     double v1; 
-    enum lanes lane1;
+    int lane1;
 
     double tau2;
     double yf2;
     double thetaf2;
     double v2;
-    enum lanes lane2;
+    int lane2;
 
     double tau3;
     double yf3;
@@ -50,12 +50,12 @@ State P(State s) {
             if(
                 (30*tau1-30*tau3<20 && 
                 30*tau1-30*tau3>10 &&
-                lane1 == Lane0 &&
-                (30*tau2-30*tau3>40 || tau2!=Lane1 || tau3-tau2>10/30)) ||
+                lane1 == 0 &&
+                (30*tau2-30*tau3>40 || lane2!=1 || tau3-tau2>10/30)) ||
                 (30*tau2-30*tau3<20 && 
                 30*tau2-30*tau3>10 &&
-                lane2 == Lane0 &&
-                (30*tau1-30*tau3>40 || tau1!=Lane1 || tau3-tau1>10/30))
+                lane2 == 0 &&
+                (30*tau1-30*tau3>40 || lane1!=1 || tau3-tau1>10/30))
             ){
                 vehicle_lane = Lane0;
                 vehicle_state = Switch_right;
@@ -64,10 +64,10 @@ State P(State s) {
             if(
                 (30*tau1-30*tau3<5 && 
                 30*tau1-30*tau3>0 &&
-                lane1 == Lane0) ||
+                lane1 == 0) ||
                 (30*tau2-30*tau3<5 && 
                 30*tau2-30*tau3>0 &&
-                lane2 == Lane0)
+                lane2 == 0)
             ){
                 vehicle_lane = Lane0;
                 vehicle_state = Stop;
@@ -101,12 +101,12 @@ State P(State s) {
             if(
                 (30*tau1-30*tau3<21 && 
                 30*tau1-30*tau3>10 &&
-                lane1 == Lane1 &&
-                (30*tau2-30*tau3>40 || tau2!=Lane0 || tau3-tau2>10/30)) ||
+                lane1 == 1 &&
+                (30*tau2-30*tau3>40 || lane2!=0 || tau3-tau2>10/30)) ||
                 (30*tau2-30*tau3<21 && 
                 30*tau2-30*tau3>10 &&
-                lane2 == Lane1 &&
-                (30*tau1-30*tau3>40 || tau1!=Lane0 || tau3-tau1>10/30))
+                lane2 == 1 &&
+                (30*tau1-30*tau3>40 || lane1!=0 || tau3-tau1>10/30))
             ){
                 vehicle_lane = Lane1;
                 vehicle_state = Switch_left;
@@ -115,12 +115,12 @@ State P(State s) {
             if(
                 (30*tau1-30*tau3<20 && 
                 30*tau1-30*tau3>10 &&
-                lane1 == Lane1 &&
-                (30*tau2-30*tau3>40 || tau2!=Lane2 || tau3-tau2>10/30)) ||
+                lane1 == 1 &&
+                (30*tau2-30*tau3>40 || lane2!=2 || tau3-tau2>10/30)) ||
                 (30*tau2-30*tau3<20 && 
                 30*tau2-30*tau3>10 &&
-                lane2 == Lane1 &&
-                (30*tau1-30*tau3>40 || tau1!=Lane2 || tau3-tau1>10/30))    
+                lane2 == 1 &&
+                (30*tau1-30*tau3>40 || lane1!=2 || tau3-tau1>10/30))    
             ){
                 vehicle_lane = Lane1;
                 vehicle_state = Switch_right;
@@ -129,10 +129,10 @@ State P(State s) {
             if(
                 (30*tau1-30*tau3<5 && 
                 30*tau1-30*tau3>0 &&
-                lane1 == Lane1) ||
+                lane1 == 1) ||
                 (30*tau2-30*tau3<5 && 
                 30*tau2-30*tau3>0 &&
-                lane2 == Lane1)
+                lane2 == 1)
             ){
                 vehicle_lane = Lane1;
                 vehicle_state = Stop;
@@ -142,8 +142,8 @@ State P(State s) {
         }
         if (vehicle_state==Switch_left){
             if(yf3>=2.5){
-                vehicle_state = Straight; 
                 vehicle_lane = Lane0;
+                vehicle_state = Straight; 
                 // Resets
                 yf3 = yf3-3;
             }
@@ -174,12 +174,12 @@ State P(State s) {
             if(
                 (30*tau1-30*tau3<20 && 
                 30*tau1-30*tau3>10 &&
-                lane1 == Lane2 &&
-                (30*tau2-30*tau3>40 || tau2!=Lane1 || tau3-tau2>10/30)) ||
+                lane1 == 2 &&
+                (30*tau2-30*tau3>40 || lane2!=1 || tau3-tau2>10/30)) ||
                 (30*tau2-30*tau3<20 && 
                 30*tau2-30*tau3>10 &&
-                lane2 == Lane2 &&
-                (30*tau1-30*tau3>40 || tau1!=Lane1 || tau3-tau1>10/30))    
+                lane2 == 2 &&
+                (30*tau1-30*tau3>40 || lane1!=1 || tau3-tau1>10/30))    
             ){
                 vehicle_lane = Lane2;
                 vehicle_state = Switch_left;
@@ -188,10 +188,10 @@ State P(State s) {
             if(
                 (30*tau1-30*tau3<5 && 
                 30*tau1-30*tau3>0 &&
-                lane1 == Lane2) ||
+                lane1 == 2) ||
                 (30*tau2-30*tau3<5 && 
                 30*tau2-30*tau3>0 &&
-                lane2 == Lane2)
+                lane2 == 2)
             ){
                 vehicle_lane = Lane2;
                 vehicle_state = Stop;

@@ -1,11 +1,13 @@
 #Accidentally uploaded old code and left computer with newest code at home!!!! 
 #This is quite old! It only computes a path, but doesn't distingusih between guards and resets
 
+from cgitb import reset
 import clang.cindex
 import typing
 import json
 import sys
-from typing import List
+from typing import List, Tuple
+import re 
 #from cfg import CFG
 #import clang.cfg
 
@@ -51,10 +53,12 @@ def find_all_exposed_fields(
 ):
     result = []
     field_declarations = filter_node_list_by_node_kind(cursor.get_children(), [clang.cindex.CursorKind.FIELD_DECL])
-    for i in field_declarations:
-        if not is_exposed_field(i):
+    for cursor in field_declarations:
+        if list(cursor.get_tokens())[0].spelling == "enum":
             continue
-        result.append(i.displayname)
+        if not is_exposed_field(cursor):
+            continue
+        result.append(cursor.displayname)
     return result
 
 
@@ -73,7 +77,7 @@ def populate_field_list_recursively(class_name: str,class_field_map,class_inheri
 def get_state_variables(translation_unit):
     rtti_map = {}
     source_nodes = filter_node_list_by_file(translation_unit.cursor.get_children(), translation_unit.spelling)
-    all_classes = filter_node_list_by_node_kind(source_nodes, [clang.cindex.CursorKind.ENUM_DECL, clang.cindex.CursorKind.STRUCT_DECL])
+    all_classes = filter_node_list_by_node_kind(source_nodes, [clang.cindex.CursorKind.STRUCT_DECL])
     class_inheritance_map = {}
     class_field_map = {}
     for i in all_classes:
@@ -226,6 +230,11 @@ def code_from_cursor(cursor):
         code.append(line)
     return code
 
+def code_from_cursor_simpler(cursor):
+    code = ""
+    for tok in cursor.get_tokens():
+        code += tok.spelling
+    return code
 
 def visit_outter_if(node):
     if_statements = []
@@ -297,12 +306,13 @@ def find_immediate_if(cursor:clang.cindex.Cursor) -> List[if_tree_node]:
     #     return res
     res = []
     for child_cursor in cursor.get_children():
-        if child_cursor.kind == clang.cindex.CursorKind.IF_STMT:
+        if child_cursor.kind == clang.cindex.CursorKind.IF_STMT or child_cursor.kind == clang.cindex.CursorKind.FOR_STMT:
             node = if_tree_node(child_cursor, [])
             res.append(node)
         else:
             res += find_immediate_if(child_cursor)
     return res
+
 # Purge the complicated cursor tree to ones that only have ifs
 # Input: cursor, the root cursor that we want to explore
 #        root, the root of the if tree
@@ -327,15 +337,43 @@ def extract_if_tree(cursor:clang.cindex.Cursor) -> if_tree_node:
 # def extract_num_mode_params(nodes: typing.Iterable[clang.cindex.Cursor]) -> int:
 #     return 2
 
-def extract_modes(root: if_tree_node) -> List[str]:
+def extract_modes(root: if_tree_node) -> Tuple[List[str], int]:
     res = []
     node_list = []
+    num_mode_kw = -1
     for node in root.child_node:
         if node.child_node:
             cursor = node.cursor
             condition_cursor = list(cursor.get_children())[0]
             mode_str = list(condition_cursor.get_tokens())[2].spelling
-            node_list.append((node, mode_str))
+            node_list.append((node, mode_str, 1))
+    while node_list:
+        par_node, prev_mode_str, num_kw = node_list.pop()
+        for node in par_node.child_node:
+            if node.child_node:
+                cursor = node.cursor
+                condition_cursor = list(cursor.get_children())[0]
+                mode_str = list(condition_cursor.get_tokens())[2].spelling
+                node_list.append((node, prev_mode_str + ";" + mode_str, num_kw+1))
+            else:
+                if prev_mode_str not in res:
+                    res.append(prev_mode_str)
+                    num_mode_kw = max(num_mode_kw, num_kw)
+
+    return res, num_mode_kw
+
+def extract_transitions(root: if_tree_node):
+    mode_list, num_kw = extract_modes(root)
+    node_list = []
+    edge = []
+    guards = []
+    resets = []
+
+    for node in root.child_node:
+        cursor = node.cursor
+        condition_cursor = list(cursor.get_children())[0]
+        mode_str = list(condition_cursor.get_tokens())[2].spelling
+        node_list.append((node, mode_str))
     while node_list:
         par_node, prev_mode_str = node_list.pop()
         for node in par_node.child_node:
@@ -345,10 +383,43 @@ def extract_modes(root: if_tree_node) -> List[str]:
                 mode_str = list(condition_cursor.get_tokens())[2].spelling
                 node_list.append((node, prev_mode_str + ";" + mode_str))
             else:
-                if prev_mode_str not in res:
-                    res.append(prev_mode_str)
+                cursor = node.cursor 
 
-    return res
+                # Get the source of the edge
+                edge_src = prev_mode_str 
+                edge_src_idx = mode_list.index(edge_src)
+
+                # Get the guard for the edge
+                edge_guard_cursor = list(cursor.get_children())[0]
+                guard_str = code_from_cursor_simpler(edge_guard_cursor)
+                edge_guard = guard_str 
+
+                # Get the destination of the edge
+                compound_cursor = list(cursor.get_children())[1]
+                code_cursors = list(compound_cursor.get_children())
+                dest_mode_kw = []
+                for i in range(num_kw):
+                    guard_cursor = code_cursors[i]
+                    dest_mode_kw += [list(guard_cursor.get_tokens())[2].spelling]
+                edge_dest = dest_mode_kw[0]
+                for i in range(1,len(dest_mode_kw)):
+                    edge_dest = edge_dest+";"+dest_mode_kw[i]
+                if edge_dest not in mode_list:
+                    mode_list.append(edge_dest)
+                edge_dest_idx = mode_list.index(edge_dest)
+
+                # Get the resets for the edge
+                edge_resets = ""
+                for i in range(num_kw, len(code_cursors)):
+                    reset_cursor = code_cursors[i]
+                    edge_resets += (code_from_cursor_simpler(reset_cursor)+";")
+                if edge_resets != "" and edge_resets[-1] == ";":
+                    edge_resets=edge_resets[:-1]
+                edge.append([edge_src_idx, edge_dest_idx])
+                guards.append(edge_guard)
+                resets.append(edge_resets)
+    guards = pretty_guards(guards)
+    return mode_list, edge, guards, resets                    
 
 #input: current node, the set of guards/conditionals up to this point, the set of resets
 #return: the sets of guards/resets for all the children
@@ -448,17 +519,135 @@ def get_next_state(code):
     state = parts[-1].strip(';')
     return state.strip()
 
+class logic_tree_node:
+    def __init__(self, data, child = []):
+        self.data = data 
+        self.child = child
 
+# Split a single logic string into a list of strings 
+# with atomic logic expression, "(", ")", "&&", "||"
+def logic_string_split(logic_string):
+    res = re.split('(&&)',logic_string)
+
+    tmp = []
+    for sub_str in res:
+        tmp += re.split('(\|\|)',sub_str)
+    res = tmp
+
+    tmp = []
+    for sub_str in res:
+        tmp += re.split('(\()',sub_str)
+    res = tmp
+
+    tmp = []
+    for sub_str in res:
+        tmp += re.split('(\))',sub_str)
+    res = tmp
+
+    while("" in res) :
+        res.remove("")
+
+    return res 
+
+def generate_logic_tree(logic_string):
+    # Construct expression tree from inorder expression
+    # https://www.geeksforgeeks.org/program-to-convert-infix-notation-to-expression-tree/
+    logic_string = "(" + logic_string + ")"
+    s = logic_string_split(logic_string)
+    print(s)
+    stN = []
+    stC = []
+    p = {}
+    p["&&"] = 1
+    p["||"] = 1
+    p[")"] = 0
+    for i in range(len(s)):
+        if s[i] == "(":
+            stC.append(s[i])
+        
+        elif s[i] not in p:
+            t = logic_tree_node(s[i])
+            stN.append(t)
+        
+        elif(p[s[i]]>0):
+            while (len(stC) != 0 and stC[-1] != '(' and p[stC[-1]] >= p[s[i]]):
+                                # Get and remove the top element
+                # from the character stack
+                t = logic_tree_node(stC[-1])
+                stC.pop()
+ 
+                # Get and remove the top element
+                # from the node stack
+                t1 = stN[-1]
+                stN.pop()
+ 
+                # Get and remove the currently top
+                # element from the node stack
+                t2 = stN[-1]
+                stN.pop()
+ 
+                # Update the tree
+                t.child = [t1, t2]
+ 
+                # Push the node to the node stack
+                stN.append(t)
+            stC.append(s[i])
+        elif (s[i] == ')'):
+            while (len(stC) != 0 and stC[-1] != '('):
+                # from the character stack
+                t = logic_tree_node(stC[-1])
+                stC.pop()
+ 
+                # Get and remove the top element
+                # from the node stack
+                t1 = stN[-1]
+                stN.pop()
+ 
+                # Get and remove the currently top
+                # element from the node stack
+                t2 = stN[-1]
+                stN.pop()
+ 
+                # Update the tree
+                t.child = [t1, t2]
+ 
+                # Push the node to the node stack
+                stN.append(t)
+            stC.pop()
+    t = stN[-1]
+    return t
+
+def generate_guard_string(root: logic_tree_node)->str:
+    if root.data!="&&" and root.data!="||":
+        return root.data
+    else:
+        data1 = generate_guard_string(root.child[0])
+        data2 = generate_guard_string(root.child[1])
+        if root.data == "&&":
+            return f"And({data1},{data2})"
+        elif root.data == "||":
+            return f"Or({data1},{data2})"
+        
 #TODO: consider or??
 def pretty_guards(code):
-    line = code[0]
-    conditional = line.strip('if').strip('{')
-    conditions = conditional.split('&&')
-    output = "And"
-    for condition in conditions: 
-        output += condition.strip() + ","
-    output = output.strip(",")
-    return output
+    guard_string_list = []
+    for logic_string in code:
+        # split_logic_string = logic_string_split(logic_string)
+        # print(split_logic_string)
+
+        root = generate_logic_tree(logic_string)
+        guard_string = generate_guard_string(root)
+        print(guard_string)
+        guard_string_list.append(guard_string)
+    # line = code[0]
+    # conditional = line.strip('if').strip('{')
+    # conditions = conditional.split('&&')
+    # output = "And"
+    # for condition in conditions: re
+    #     output += condition.strip() + ","
+    # output = output.strip(",")
+    # return output
+    return guard_string_list
 
 #assumption: last two lines of code are reset and bracket... not idea
 def pretty_resets(code):
@@ -479,74 +668,82 @@ def traverse_tree(root: if_tree_node, level = 0):
 
 ##main code###
 #print(sys.argv)
-if len(sys.argv) < 4:
-    print("incorrect usage. call createGraph.py program inputfile outputfilename")
-    quit()
+if __name__ == "__main__":
+    if len(sys.argv) < 4:
+        print("incorrect usage. call createGraph.py program inputfile outputfilename")
+        quit()
 
-input_code_name = sys.argv[1]
-input_file_name = sys.argv[2] 
-output_file_name = sys.argv[3]
-
-
-
-with open(input_file_name) as in_json_file:
-    input_json = json.load(in_json_file)
-
-output_dict = {
-}
-
-output_dict.update(input_json)
-
-#file parsing set up
-index = clang.cindex.Index.create()
-translation_unit = index.parse(input_code_name, args=['-std=c99'])
-print("testing cfg")
-
-#FunctionDecl* func = /* ... */ ;
-#ASTContext* context = /* ... */ ;
-#Stmt* funcBody = func->getBody();
-#CFG* sourceCFG = CFG::buildCFG(func, funcBody, context, clang::CFG::BuildOptions());
-
-#add each variable in state struct as variable
-variables = get_state_variables(translation_unit)
-output_dict['variables'] = variables
-
-root = extract_if_tree(translation_unit.cursor)
-
-traverse_tree(root)
-
-# num_mode_params = extract_num_mode_params(translation_unit)
-modes = extract_modes(root)
-print(modes)
-# #traverse the tree for all the paths
-# paths = traverse_tree(translation_unit.cursor, [],[], "", False)
-
-# vertices = []
-# counter = 0
-# for path in paths:
-#     vertices.append(str(counter))
-#     counter += 1
-
-# output_dict['vertex'] = vertices
+    input_code_name = sys.argv[1]
+    input_file_name = sys.argv[2] 
+    output_file_name = sys.argv[3]
 
 
-# #traverse outter if statements and find inner statements
-# edges = []
-# guards = []
-# resets = []
 
-# #add edge, transition(guards) and resets
-# output_dict['edge'] = edges
-# output_dict['guards'] = guards
-# output_dict['resets'] = resets
+    with open(input_file_name) as in_json_file:
+        input_json = json.load(in_json_file)
 
-# output_json = json.dumps(output_dict, indent=4)
-# #print(output_json)
-# outfile = open(output_file_name, "w")
-# outfile.write(output_json)
-# outfile.close()
+    output_dict = {
+    }
 
-# print("wrote json to " + output_file_name)
+    output_dict.update(input_json)
+
+    #file parsing set up
+    index = clang.cindex.Index.create()
+    translation_unit = index.parse(input_code_name, args=['-std=c99'])
+    print("testing cfg")
+
+    #FunctionDecl* func = /* ... */ ;
+    #ASTContext* context = /* ... */ ;
+    #Stmt* funcBody = func->getBody();
+    #CFG* sourceCFG = CFG::buildCFG(func, funcBody, context, clang::CFG::BuildOptions());
+
+    #add each variable in state struct as variable
+    variables = get_state_variables(translation_unit)
+    output_dict['variables'] = variables
+
+    root = extract_if_tree(translation_unit.cursor)
+
+    traverse_tree(root)
+
+    # num_mode_params = extract_num_mode_params(translation_unit)
+    modes, num_kw = extract_modes(root)
+    print(modes, num_kw)
+
+    mode_list, edges, guards, resets = extract_transitions(root)
+    print(mode_list)
+    print(edges)
+    print(guards)
+    print(resets)
+    # #traverse the tree for all the paths
+    # paths = traverse_tree(translation_unit.cursor, [],[], "", False)
+
+    # vertices = []
+    # counter = 0
+    # for path in paths:
+    #     vertices.append(str(counter))
+    #     counter += 1
+
+    # output_dict['vertex'] = vertices
+
+
+    # #traverse outter if statements and find inner statements
+    # edges = []
+    # guards = []
+    # resets = []
+
+    # #add edge, transition(guards) and resets
+    output_dict['edge'] = edges
+    output_dict['guards'] = guards
+    output_dict['resets'] = resets
+    output_dict['vertex'] = mode_list
+
+    output_json = json.dumps(output_dict, indent=4)
+    #print(output_json)
+    outfile = open(output_file_name, "w")
+    outfile.write(output_json)
+    outfile.close()
+
+    # print("wrote json to " + output_file_name)
 
 
 
