@@ -5,6 +5,7 @@ import clang.cindex
 import typing
 import json
 import sys
+from typing import List
 #from cfg import CFG
 #import clang.cfg
 
@@ -280,11 +281,78 @@ def get_inner_if_cursors(node):
                 if_statements.append(statement)
     return if_statements
 
+class if_tree_node:
+    def __init__(self, cursor: clang.cindex.Cursor, children_ifs = []):
+        self.child_node: List(if_tree_node) = children_ifs
+        self.cursor: clang.cindex.Cursor = cursor 
 
+def find_immediate_if(cursor:clang.cindex.Cursor) -> List[if_tree_node]:
+    # if cursor.kind == clang.cindex.CursorKind.IF_STMT:
+    #     node = if_tree_node(cursor, [])
+    #     return [node]
+    # else:
+    #     res = []
+    #     for child_cursor in cursor.get_children():
+    #         res += find_immediate_if(child_cursor)
+    #     return res
+    res = []
+    for child_cursor in cursor.get_children():
+        if child_cursor.kind == clang.cindex.CursorKind.IF_STMT:
+            node = if_tree_node(child_cursor, [])
+            res.append(node)
+        else:
+            res += find_immediate_if(child_cursor)
+    return res
+# Purge the complicated cursor tree to ones that only have ifs
+# Input: cursor, the root cursor that we want to explore
+#        root, the root of the if tree
+# Return: List(if_tree_node), the list of immediate children if statement
+def extract_if_tree(cursor:clang.cindex.Cursor) -> if_tree_node:
+    node_list = []
+    root = if_tree_node(None)
+    root.child_node = find_immediate_if(cursor)
+    for node in root.child_node:
+        node_list.append(node)
+    while node_list:
+        child_node = node_list.pop(0)
+        child_cursor = child_node.cursor
+        child_node.child_node = find_immediate_if(child_cursor)
+        for node in child_node.child_node:
+            node_list.append(node)
+    # for child_node in root.child_node:
+    #     child_cursor = child_node.cursor
+    #     child_node.child_node = find_immediate_if(child_cursor)
+    return root
+
+# def extract_num_mode_params(nodes: typing.Iterable[clang.cindex.Cursor]) -> int:
+#     return 2
+
+def extract_modes(root: if_tree_node) -> List[str]:
+    res = []
+    node_list = []
+    for node in root.child_node:
+        if node.child_node:
+            cursor = node.cursor
+            condition_cursor = list(cursor.get_children())[0]
+            mode_str = list(condition_cursor.get_tokens())[2].spelling
+            node_list.append((node, mode_str))
+    while node_list:
+        par_node, prev_mode_str = node_list.pop()
+        for node in par_node.child_node:
+            if node.child_node:
+                cursor = node.cursor
+                condition_cursor = list(cursor.get_children())[0]
+                mode_str = list(condition_cursor.get_tokens())[2].spelling
+                node_list.append((node, prev_mode_str + ";" + mode_str))
+            else:
+                if prev_mode_str not in res:
+                    res.append(prev_mode_str)
+
+    return res
 
 #input: current node, the set of guards/conditionals up to this point, the set of resets
 #return: the sets of guards/resets for all the children
-def traverse_tree(node, guards, resets, indent,hasIfParent):
+def traverse_tree(node, guards, resets, indent, hasIfParent):
     #print(guards)
     childrens_guards=[]
     childrens_resets=[]
@@ -400,6 +468,14 @@ def pretty_resets(code):
         outstring += code[index].strip().strip('\n')
     return outstring.strip(';')
 
+def traverse_tree(root: if_tree_node, level = 0):
+    if root.cursor is not None:
+        cursor = root.cursor 
+        print(cursor.location.line, cursor.location.column, cursor.kind, level)
+    if not root.child_node:
+        print(f"############################## {level}") 
+    for child_node in root.child_node:
+        traverse_tree(child_node, level+1)
 
 ##main code###
 #print(sys.argv)
@@ -435,35 +511,42 @@ print("testing cfg")
 variables = get_state_variables(translation_unit)
 output_dict['variables'] = variables
 
-#traverse the tree for all the paths
-paths = traverse_tree(translation_unit.cursor, [],[], "", False)
+root = extract_if_tree(translation_unit.cursor)
 
-vertices = []
-counter = 0
-for path in paths:
-    vertices.append(str(counter))
-    counter += 1
+traverse_tree(root)
 
-output_dict['vertex'] = vertices
+# num_mode_params = extract_num_mode_params(translation_unit)
+modes = extract_modes(root)
+print(modes)
+# #traverse the tree for all the paths
+# paths = traverse_tree(translation_unit.cursor, [],[], "", False)
+
+# vertices = []
+# counter = 0
+# for path in paths:
+#     vertices.append(str(counter))
+#     counter += 1
+
+# output_dict['vertex'] = vertices
 
 
-#traverse outter if statements and find inner statements
-edges = []
-guards = []
-resets = []
+# #traverse outter if statements and find inner statements
+# edges = []
+# guards = []
+# resets = []
 
-#add edge, transition(guards) and resets
-output_dict['edge'] = edges
-output_dict['guards'] = guards
-output_dict['resets'] = resets
+# #add edge, transition(guards) and resets
+# output_dict['edge'] = edges
+# output_dict['guards'] = guards
+# output_dict['resets'] = resets
 
-output_json = json.dumps(output_dict, indent=4)
-#print(output_json)
-outfile = open(output_file_name, "w")
-outfile.write(output_json)
-outfile.close()
+# output_json = json.dumps(output_dict, indent=4)
+# #print(output_json)
+# outfile = open(output_file_name, "w")
+# outfile.write(output_json)
+# outfile.close()
 
-print("wrote json to " + output_file_name)
+# print("wrote json to " + output_file_name)
 
 
 

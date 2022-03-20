@@ -1,0 +1,1861 @@
+2 6 CursorKind.ENUM_DECL 0
+2 13 CursorKind.ENUM_CONSTANT_DECL 1
+############################## 2
+2 22 CursorKind.ENUM_CONSTANT_DECL 1
+############################## 2
+2 34 CursorKind.ENUM_CONSTANT_DECL 1
+############################## 2
+2 47 CursorKind.ENUM_CONSTANT_DECL 1
+############################## 2
+3 6 CursorKind.ENUM_DECL 0
+3 13 CursorKind.ENUM_CONSTANT_DECL 1
+############################## 2
+3 20 CursorKind.ENUM_CONSTANT_DECL 1
+############################## 2
+3 27 CursorKind.ENUM_CONSTANT_DECL 1
+############################## 2
+5 8 CursorKind.STRUCT_DECL 0
+6 12 CursorKind.FIELD_DECL 1
+############################## 2
+7 12 CursorKind.FIELD_DECL 1
+############################## 2
+8 12 CursorKind.FIELD_DECL 1
+############################## 2
+9 12 CursorKind.FIELD_DECL 1
+############################## 2
+10 16 CursorKind.FIELD_DECL 1
+10 10 CursorKind.TYPE_REF 2
+############################## 3
+12 12 CursorKind.FIELD_DECL 1
+############################## 2
+13 12 CursorKind.FIELD_DECL 1
+############################## 2
+14 12 CursorKind.FIELD_DECL 1
+############################## 2
+15 12 CursorKind.FIELD_DECL 1
+############################## 2
+16 16 CursorKind.FIELD_DECL 1
+16 10 CursorKind.TYPE_REF 2
+############################## 3
+18 12 CursorKind.FIELD_DECL 1
+############################## 2
+19 12 CursorKind.FIELD_DECL 1
+############################## 2
+20 12 CursorKind.FIELD_DECL 1
+############################## 2
+21 12 CursorKind.FIELD_DECL 1
+############################## 2
+22 16 CursorKind.FIELD_DECL 1
+22 10 CursorKind.TYPE_REF 2
+############################## 3
+24 16 CursorKind.FIELD_DECL 1
+24 10 CursorKind.TYPE_REF 2
+############################## 3
+27 22 CursorKind.TYPEDEF_DECL 0
+27 16 CursorKind.TYPE_REF 1
+############################## 2
+29 7 CursorKind.FUNCTION_DECL 0
+29 1 CursorKind.TYPE_REF 1
+############################## 2
+29 15 CursorKind.PARM_DECL 1
+29 9 CursorKind.TYPE_REF 2
+############################## 3
+29 18 CursorKind.COMPOUND_STMT 1
+30 5 CursorKind.DECL_STMT 2
+30 12 CursorKind.VAR_DECL 3
+30 21 CursorKind.UNEXPOSED_EXPR 4
+30 21 CursorKind.MEMBER_REF_EXPR 5
+30 19 CursorKind.DECL_REF_EXPR 6
+############################## 7
+31 5 CursorKind.DECL_STMT 2
+31 12 CursorKind.VAR_DECL 3
+31 20 CursorKind.UNEXPOSED_EXPR 4
+31 20 CursorKind.MEMBER_REF_EXPR 5
+31 18 CursorKind.DECL_REF_EXPR 6
+############################## 7
+32 5 CursorKind.DECL_STMT 2
+32 12 CursorKind.VAR_DECL 3
+32 24 CursorKind.UNEXPOSED_EXPR 4
+32 24 CursorKind.MEMBER_REF_EXPR 5
+32 22 CursorKind.DECL_REF_EXPR 6
+############################## 7
+33 5 CursorKind.DECL_STMT 2
+33 12 CursorKind.VAR_DECL 3
+33 19 CursorKind.UNEXPOSED_EXPR 4
+33 19 CursorKind.MEMBER_REF_EXPR 5
+33 17 CursorKind.DECL_REF_EXPR 6
+############################## 7
+34 5 CursorKind.DECL_STMT 2
+34 16 CursorKind.VAR_DECL 3
+34 10 CursorKind.TYPE_REF 4
+############################## 5
+34 26 CursorKind.UNEXPOSED_EXPR 4
+34 26 CursorKind.MEMBER_REF_EXPR 5
+34 24 CursorKind.DECL_REF_EXPR 6
+############################## 7
+35 5 CursorKind.DECL_STMT 2
+35 12 CursorKind.VAR_DECL 3
+35 21 CursorKind.UNEXPOSED_EXPR 4
+35 21 CursorKind.MEMBER_REF_EXPR 5
+35 19 CursorKind.DECL_REF_EXPR 6
+############################## 7
+36 5 CursorKind.DECL_STMT 2
+36 12 CursorKind.VAR_DECL 3
+36 20 CursorKind.UNEXPOSED_EXPR 4
+36 20 CursorKind.MEMBER_REF_EXPR 5
+36 18 CursorKind.DECL_REF_EXPR 6
+############################## 7
+37 5 CursorKind.DECL_STMT 2
+37 12 CursorKind.VAR_DECL 3
+37 24 CursorKind.UNEXPOSED_EXPR 4
+37 24 CursorKind.MEMBER_REF_EXPR 5
+37 22 CursorKind.DECL_REF_EXPR 6
+############################## 7
+38 5 CursorKind.DECL_STMT 2
+38 12 CursorKind.VAR_DECL 3
+38 19 CursorKind.UNEXPOSED_EXPR 4
+38 19 CursorKind.MEMBER_REF_EXPR 5
+38 17 CursorKind.DECL_REF_EXPR 6
+############################## 7
+39 5 CursorKind.DECL_STMT 2
+39 16 CursorKind.VAR_DECL 3
+39 10 CursorKind.TYPE_REF 4
+############################## 5
+39 26 CursorKind.UNEXPOSED_EXPR 4
+39 26 CursorKind.MEMBER_REF_EXPR 5
+39 24 CursorKind.DECL_REF_EXPR 6
+############################## 7
+41 5 CursorKind.DECL_STMT 2
+41 12 CursorKind.VAR_DECL 3
+41 21 CursorKind.UNEXPOSED_EXPR 4
+41 21 CursorKind.MEMBER_REF_EXPR 5
+41 19 CursorKind.DECL_REF_EXPR 6
+############################## 7
+42 5 CursorKind.DECL_STMT 2
+42 12 CursorKind.VAR_DECL 3
+42 20 CursorKind.UNEXPOSED_EXPR 4
+42 20 CursorKind.MEMBER_REF_EXPR 5
+42 18 CursorKind.DECL_REF_EXPR 6
+############################## 7
+43 5 CursorKind.DECL_STMT 2
+43 12 CursorKind.VAR_DECL 3
+43 24 CursorKind.UNEXPOSED_EXPR 4
+43 24 CursorKind.MEMBER_REF_EXPR 5
+43 22 CursorKind.DECL_REF_EXPR 6
+############################## 7
+44 5 CursorKind.DECL_STMT 2
+44 12 CursorKind.VAR_DECL 3
+44 19 CursorKind.UNEXPOSED_EXPR 4
+44 19 CursorKind.MEMBER_REF_EXPR 5
+44 17 CursorKind.DECL_REF_EXPR 6
+############################## 7
+45 5 CursorKind.DECL_STMT 2
+45 16 CursorKind.VAR_DECL 3
+45 10 CursorKind.TYPE_REF 4
+############################## 5
+45 33 CursorKind.UNEXPOSED_EXPR 4
+45 33 CursorKind.MEMBER_REF_EXPR 5
+45 31 CursorKind.DECL_REF_EXPR 6
+############################## 7
+46 5 CursorKind.DECL_STMT 2
+46 16 CursorKind.VAR_DECL 3
+46 10 CursorKind.TYPE_REF 4
+############################## 5
+46 34 CursorKind.UNEXPOSED_EXPR 4
+46 34 CursorKind.MEMBER_REF_EXPR 5
+46 32 CursorKind.DECL_REF_EXPR 6
+############################## 7
+48 5 CursorKind.IF_STMT 2
+48 9 CursorKind.BINARY_OPERATOR 3
+48 9 CursorKind.UNEXPOSED_EXPR 4
+48 9 CursorKind.UNEXPOSED_EXPR 5
+48 9 CursorKind.DECL_REF_EXPR 6
+############################## 7
+48 25 CursorKind.UNEXPOSED_EXPR 4
+48 25 CursorKind.DECL_REF_EXPR 5
+############################## 6
+48 31 CursorKind.COMPOUND_STMT 3
+49 9 CursorKind.IF_STMT 4
+49 13 CursorKind.BINARY_OPERATOR 5
+49 13 CursorKind.UNEXPOSED_EXPR 6
+49 13 CursorKind.UNEXPOSED_EXPR 7
+49 13 CursorKind.DECL_REF_EXPR 8
+############################## 9
+49 28 CursorKind.UNEXPOSED_EXPR 6
+49 28 CursorKind.DECL_REF_EXPR 7
+############################## 8
+49 38 CursorKind.COMPOUND_STMT 5
+50 13 CursorKind.IF_STMT 6
+51 17 CursorKind.BINARY_OPERATOR 7
+51 17 CursorKind.PAREN_EXPR 8
+51 18 CursorKind.BINARY_OPERATOR 9
+51 18 CursorKind.BINARY_OPERATOR 10
+51 18 CursorKind.BINARY_OPERATOR 11
+51 18 CursorKind.BINARY_OPERATOR 12
+51 18 CursorKind.BINARY_OPERATOR 13
+51 18 CursorKind.BINARY_OPERATOR 14
+51 18 CursorKind.UNEXPOSED_EXPR 15
+51 18 CursorKind.INTEGER_LITERAL 16
+############################## 17
+51 21 CursorKind.UNEXPOSED_EXPR 15
+51 21 CursorKind.DECL_REF_EXPR 16
+############################## 17
+51 26 CursorKind.BINARY_OPERATOR 14
+51 26 CursorKind.UNEXPOSED_EXPR 15
+51 26 CursorKind.INTEGER_LITERAL 16
+############################## 17
+51 29 CursorKind.UNEXPOSED_EXPR 15
+51 29 CursorKind.DECL_REF_EXPR 16
+############################## 17
+51 34 CursorKind.UNEXPOSED_EXPR 13
+51 34 CursorKind.INTEGER_LITERAL 14
+############################## 15
+52 17 CursorKind.BINARY_OPERATOR 12
+52 17 CursorKind.BINARY_OPERATOR 13
+52 17 CursorKind.BINARY_OPERATOR 14
+52 17 CursorKind.UNEXPOSED_EXPR 15
+52 17 CursorKind.INTEGER_LITERAL 16
+############################## 17
+52 20 CursorKind.UNEXPOSED_EXPR 15
+52 20 CursorKind.DECL_REF_EXPR 16
+############################## 17
+52 25 CursorKind.BINARY_OPERATOR 14
+52 25 CursorKind.UNEXPOSED_EXPR 15
+52 25 CursorKind.INTEGER_LITERAL 16
+############################## 17
+52 28 CursorKind.UNEXPOSED_EXPR 15
+52 28 CursorKind.DECL_REF_EXPR 16
+############################## 17
+52 33 CursorKind.UNEXPOSED_EXPR 13
+52 33 CursorKind.INTEGER_LITERAL 14
+############################## 15
+53 17 CursorKind.BINARY_OPERATOR 11
+53 17 CursorKind.UNEXPOSED_EXPR 12
+53 17 CursorKind.UNEXPOSED_EXPR 13
+53 17 CursorKind.DECL_REF_EXPR 14
+############################## 15
+53 26 CursorKind.UNEXPOSED_EXPR 12
+53 26 CursorKind.DECL_REF_EXPR 13
+############################## 14
+54 17 CursorKind.PAREN_EXPR 10
+54 18 CursorKind.BINARY_OPERATOR 11
+54 18 CursorKind.BINARY_OPERATOR 12
+54 18 CursorKind.BINARY_OPERATOR 13
+54 18 CursorKind.BINARY_OPERATOR 14
+54 18 CursorKind.BINARY_OPERATOR 15
+54 18 CursorKind.UNEXPOSED_EXPR 16
+54 18 CursorKind.INTEGER_LITERAL 17
+############################## 18
+54 21 CursorKind.UNEXPOSED_EXPR 16
+54 21 CursorKind.DECL_REF_EXPR 17
+############################## 18
+54 26 CursorKind.BINARY_OPERATOR 15
+54 26 CursorKind.UNEXPOSED_EXPR 16
+54 26 CursorKind.INTEGER_LITERAL 17
+############################## 18
+54 29 CursorKind.UNEXPOSED_EXPR 16
+54 29 CursorKind.DECL_REF_EXPR 17
+############################## 18
+54 34 CursorKind.UNEXPOSED_EXPR 14
+54 34 CursorKind.INTEGER_LITERAL 15
+############################## 16
+54 40 CursorKind.BINARY_OPERATOR 13
+54 40 CursorKind.UNEXPOSED_EXPR 14
+54 40 CursorKind.DECL_REF_EXPR 15
+############################## 16
+54 46 CursorKind.UNEXPOSED_EXPR 14
+54 46 CursorKind.DECL_REF_EXPR 15
+############################## 16
+54 55 CursorKind.BINARY_OPERATOR 12
+54 55 CursorKind.BINARY_OPERATOR 13
+54 55 CursorKind.UNEXPOSED_EXPR 14
+54 55 CursorKind.DECL_REF_EXPR 15
+############################## 16
+54 60 CursorKind.UNEXPOSED_EXPR 14
+54 60 CursorKind.DECL_REF_EXPR 15
+############################## 16
+54 65 CursorKind.UNEXPOSED_EXPR 13
+54 65 CursorKind.BINARY_OPERATOR 14
+54 65 CursorKind.INTEGER_LITERAL 15
+############################## 16
+54 68 CursorKind.INTEGER_LITERAL 15
+############################## 16
+55 17 CursorKind.PAREN_EXPR 8
+55 18 CursorKind.BINARY_OPERATOR 9
+55 18 CursorKind.BINARY_OPERATOR 10
+55 18 CursorKind.BINARY_OPERATOR 11
+55 18 CursorKind.BINARY_OPERATOR 12
+55 18 CursorKind.BINARY_OPERATOR 13
+55 18 CursorKind.BINARY_OPERATOR 14
+55 18 CursorKind.UNEXPOSED_EXPR 15
+55 18 CursorKind.INTEGER_LITERAL 16
+############################## 17
+55 21 CursorKind.UNEXPOSED_EXPR 15
+55 21 CursorKind.DECL_REF_EXPR 16
+############################## 17
+55 26 CursorKind.BINARY_OPERATOR 14
+55 26 CursorKind.UNEXPOSED_EXPR 15
+55 26 CursorKind.INTEGER_LITERAL 16
+############################## 17
+55 29 CursorKind.UNEXPOSED_EXPR 15
+55 29 CursorKind.DECL_REF_EXPR 16
+############################## 17
+55 34 CursorKind.UNEXPOSED_EXPR 13
+55 34 CursorKind.INTEGER_LITERAL 14
+############################## 15
+56 17 CursorKind.BINARY_OPERATOR 12
+56 17 CursorKind.BINARY_OPERATOR 13
+56 17 CursorKind.BINARY_OPERATOR 14
+56 17 CursorKind.UNEXPOSED_EXPR 15
+56 17 CursorKind.INTEGER_LITERAL 16
+############################## 17
+56 20 CursorKind.UNEXPOSED_EXPR 15
+56 20 CursorKind.DECL_REF_EXPR 16
+############################## 17
+56 25 CursorKind.BINARY_OPERATOR 14
+56 25 CursorKind.UNEXPOSED_EXPR 15
+56 25 CursorKind.INTEGER_LITERAL 16
+############################## 17
+56 28 CursorKind.UNEXPOSED_EXPR 15
+56 28 CursorKind.DECL_REF_EXPR 16
+############################## 17
+56 33 CursorKind.UNEXPOSED_EXPR 13
+56 33 CursorKind.INTEGER_LITERAL 14
+############################## 15
+57 17 CursorKind.BINARY_OPERATOR 11
+57 17 CursorKind.UNEXPOSED_EXPR 12
+57 17 CursorKind.UNEXPOSED_EXPR 13
+57 17 CursorKind.DECL_REF_EXPR 14
+############################## 15
+57 26 CursorKind.UNEXPOSED_EXPR 12
+57 26 CursorKind.DECL_REF_EXPR 13
+############################## 14
+58 17 CursorKind.PAREN_EXPR 10
+58 18 CursorKind.BINARY_OPERATOR 11
+58 18 CursorKind.BINARY_OPERATOR 12
+58 18 CursorKind.BINARY_OPERATOR 13
+58 18 CursorKind.BINARY_OPERATOR 14
+58 18 CursorKind.BINARY_OPERATOR 15
+58 18 CursorKind.UNEXPOSED_EXPR 16
+58 18 CursorKind.INTEGER_LITERAL 17
+############################## 18
+58 21 CursorKind.UNEXPOSED_EXPR 16
+58 21 CursorKind.DECL_REF_EXPR 17
+############################## 18
+58 26 CursorKind.BINARY_OPERATOR 15
+58 26 CursorKind.UNEXPOSED_EXPR 16
+58 26 CursorKind.INTEGER_LITERAL 17
+############################## 18
+58 29 CursorKind.UNEXPOSED_EXPR 16
+58 29 CursorKind.DECL_REF_EXPR 17
+############################## 18
+58 34 CursorKind.UNEXPOSED_EXPR 14
+58 34 CursorKind.INTEGER_LITERAL 15
+############################## 16
+58 40 CursorKind.BINARY_OPERATOR 13
+58 40 CursorKind.UNEXPOSED_EXPR 14
+58 40 CursorKind.DECL_REF_EXPR 15
+############################## 16
+58 46 CursorKind.UNEXPOSED_EXPR 14
+58 46 CursorKind.DECL_REF_EXPR 15
+############################## 16
+58 55 CursorKind.BINARY_OPERATOR 12
+58 55 CursorKind.BINARY_OPERATOR 13
+58 55 CursorKind.UNEXPOSED_EXPR 14
+58 55 CursorKind.DECL_REF_EXPR 15
+############################## 16
+58 60 CursorKind.UNEXPOSED_EXPR 14
+58 60 CursorKind.DECL_REF_EXPR 15
+############################## 16
+58 65 CursorKind.UNEXPOSED_EXPR 13
+58 65 CursorKind.BINARY_OPERATOR 14
+58 65 CursorKind.INTEGER_LITERAL 15
+############################## 16
+58 68 CursorKind.INTEGER_LITERAL 15
+############################## 16
+59 14 CursorKind.COMPOUND_STMT 7
+60 17 CursorKind.BINARY_OPERATOR 8
+60 17 CursorKind.DECL_REF_EXPR 9
+############################## 10
+60 33 CursorKind.UNEXPOSED_EXPR 9
+60 33 CursorKind.DECL_REF_EXPR 10
+############################## 11
+63 13 CursorKind.IF_STMT 6
+64 17 CursorKind.BINARY_OPERATOR 7
+64 17 CursorKind.PAREN_EXPR 8
+64 18 CursorKind.BINARY_OPERATOR 9
+64 18 CursorKind.BINARY_OPERATOR 10
+64 18 CursorKind.BINARY_OPERATOR 11
+64 18 CursorKind.BINARY_OPERATOR 12
+64 18 CursorKind.BINARY_OPERATOR 13
+64 18 CursorKind.UNEXPOSED_EXPR 14
+64 18 CursorKind.INTEGER_LITERAL 15
+############################## 16
+64 21 CursorKind.UNEXPOSED_EXPR 14
+64 21 CursorKind.DECL_REF_EXPR 15
+############################## 16
+64 26 CursorKind.BINARY_OPERATOR 13
+64 26 CursorKind.UNEXPOSED_EXPR 14
+64 26 CursorKind.INTEGER_LITERAL 15
+############################## 16
+64 29 CursorKind.UNEXPOSED_EXPR 14
+64 29 CursorKind.DECL_REF_EXPR 15
+############################## 16
+64 34 CursorKind.UNEXPOSED_EXPR 12
+64 34 CursorKind.INTEGER_LITERAL 13
+############################## 14
+65 17 CursorKind.BINARY_OPERATOR 11
+65 17 CursorKind.BINARY_OPERATOR 12
+65 17 CursorKind.BINARY_OPERATOR 13
+65 17 CursorKind.UNEXPOSED_EXPR 14
+65 17 CursorKind.INTEGER_LITERAL 15
+############################## 16
+65 20 CursorKind.UNEXPOSED_EXPR 14
+65 20 CursorKind.DECL_REF_EXPR 15
+############################## 16
+65 25 CursorKind.BINARY_OPERATOR 13
+65 25 CursorKind.UNEXPOSED_EXPR 14
+65 25 CursorKind.INTEGER_LITERAL 15
+############################## 16
+65 28 CursorKind.UNEXPOSED_EXPR 14
+65 28 CursorKind.DECL_REF_EXPR 15
+############################## 16
+65 33 CursorKind.UNEXPOSED_EXPR 12
+65 33 CursorKind.INTEGER_LITERAL 13
+############################## 14
+66 17 CursorKind.BINARY_OPERATOR 10
+66 17 CursorKind.UNEXPOSED_EXPR 11
+66 17 CursorKind.UNEXPOSED_EXPR 12
+66 17 CursorKind.DECL_REF_EXPR 13
+############################## 14
+66 26 CursorKind.UNEXPOSED_EXPR 11
+66 26 CursorKind.DECL_REF_EXPR 12
+############################## 13
+67 17 CursorKind.PAREN_EXPR 8
+67 18 CursorKind.BINARY_OPERATOR 9
+67 18 CursorKind.BINARY_OPERATOR 10
+67 18 CursorKind.BINARY_OPERATOR 11
+67 18 CursorKind.BINARY_OPERATOR 12
+67 18 CursorKind.BINARY_OPERATOR 13
+67 18 CursorKind.UNEXPOSED_EXPR 14
+67 18 CursorKind.INTEGER_LITERAL 15
+############################## 16
+67 21 CursorKind.UNEXPOSED_EXPR 14
+67 21 CursorKind.DECL_REF_EXPR 15
+############################## 16
+67 26 CursorKind.BINARY_OPERATOR 13
+67 26 CursorKind.UNEXPOSED_EXPR 14
+67 26 CursorKind.INTEGER_LITERAL 15
+############################## 16
+67 29 CursorKind.UNEXPOSED_EXPR 14
+67 29 CursorKind.DECL_REF_EXPR 15
+############################## 16
+67 34 CursorKind.UNEXPOSED_EXPR 12
+67 34 CursorKind.INTEGER_LITERAL 13
+############################## 14
+68 17 CursorKind.BINARY_OPERATOR 11
+68 17 CursorKind.BINARY_OPERATOR 12
+68 17 CursorKind.BINARY_OPERATOR 13
+68 17 CursorKind.UNEXPOSED_EXPR 14
+68 17 CursorKind.INTEGER_LITERAL 15
+############################## 16
+68 20 CursorKind.UNEXPOSED_EXPR 14
+68 20 CursorKind.DECL_REF_EXPR 15
+############################## 16
+68 25 CursorKind.BINARY_OPERATOR 13
+68 25 CursorKind.UNEXPOSED_EXPR 14
+68 25 CursorKind.INTEGER_LITERAL 15
+############################## 16
+68 28 CursorKind.UNEXPOSED_EXPR 14
+68 28 CursorKind.DECL_REF_EXPR 15
+############################## 16
+68 33 CursorKind.UNEXPOSED_EXPR 12
+68 33 CursorKind.INTEGER_LITERAL 13
+############################## 14
+69 17 CursorKind.BINARY_OPERATOR 10
+69 17 CursorKind.UNEXPOSED_EXPR 11
+69 17 CursorKind.UNEXPOSED_EXPR 12
+69 17 CursorKind.DECL_REF_EXPR 13
+############################## 14
+69 26 CursorKind.UNEXPOSED_EXPR 11
+69 26 CursorKind.DECL_REF_EXPR 12
+############################## 13
+70 14 CursorKind.COMPOUND_STMT 7
+71 17 CursorKind.BINARY_OPERATOR 8
+71 17 CursorKind.DECL_REF_EXPR 9
+############################## 10
+71 33 CursorKind.UNEXPOSED_EXPR 9
+71 33 CursorKind.DECL_REF_EXPR 10
+############################## 11
+73 17 CursorKind.BINARY_OPERATOR 8
+73 17 CursorKind.DECL_REF_EXPR 9
+############################## 10
+73 22 CursorKind.UNEXPOSED_EXPR 9
+73 22 CursorKind.INTEGER_LITERAL 10
+############################## 11
+76 9 CursorKind.IF_STMT 4
+76 13 CursorKind.BINARY_OPERATOR 5
+76 13 CursorKind.UNEXPOSED_EXPR 6
+76 13 CursorKind.UNEXPOSED_EXPR 7
+76 13 CursorKind.DECL_REF_EXPR 8
+############################## 9
+76 28 CursorKind.UNEXPOSED_EXPR 6
+76 28 CursorKind.DECL_REF_EXPR 7
+############################## 8
+76 40 CursorKind.COMPOUND_STMT 5
+############################## 6
+79 9 CursorKind.IF_STMT 4
+79 13 CursorKind.BINARY_OPERATOR 5
+79 13 CursorKind.UNEXPOSED_EXPR 6
+79 13 CursorKind.UNEXPOSED_EXPR 7
+79 13 CursorKind.DECL_REF_EXPR 8
+############################## 9
+79 28 CursorKind.UNEXPOSED_EXPR 6
+79 28 CursorKind.DECL_REF_EXPR 7
+############################## 8
+79 41 CursorKind.COMPOUND_STMT 5
+80 13 CursorKind.IF_STMT 6
+80 16 CursorKind.BINARY_OPERATOR 7
+80 16 CursorKind.UNEXPOSED_EXPR 8
+80 16 CursorKind.DECL_REF_EXPR 9
+############################## 10
+80 21 CursorKind.UNARY_OPERATOR 8
+80 22 CursorKind.FLOATING_LITERAL 9
+############################## 10
+80 26 CursorKind.COMPOUND_STMT 7
+81 17 CursorKind.BINARY_OPERATOR 8
+81 17 CursorKind.DECL_REF_EXPR 9
+############################## 10
+81 33 CursorKind.UNEXPOSED_EXPR 9
+81 33 CursorKind.DECL_REF_EXPR 10
+############################## 11
+82 17 CursorKind.BINARY_OPERATOR 8
+82 17 CursorKind.DECL_REF_EXPR 9
+############################## 10
+82 32 CursorKind.UNEXPOSED_EXPR 9
+82 32 CursorKind.DECL_REF_EXPR 10
+############################## 11
+84 17 CursorKind.BINARY_OPERATOR 8
+84 17 CursorKind.DECL_REF_EXPR 9
+############################## 10
+84 23 CursorKind.BINARY_OPERATOR 9
+84 23 CursorKind.UNEXPOSED_EXPR 10
+84 23 CursorKind.DECL_REF_EXPR 11
+############################## 12
+84 27 CursorKind.UNEXPOSED_EXPR 10
+84 27 CursorKind.INTEGER_LITERAL 11
+############################## 12
+87 9 CursorKind.IF_STMT 4
+87 13 CursorKind.BINARY_OPERATOR 5
+87 13 CursorKind.UNEXPOSED_EXPR 6
+87 13 CursorKind.UNEXPOSED_EXPR 7
+87 13 CursorKind.DECL_REF_EXPR 8
+############################## 9
+87 28 CursorKind.UNEXPOSED_EXPR 6
+87 28 CursorKind.DECL_REF_EXPR 7
+############################## 8
+87 33 CursorKind.COMPOUND_STMT 5
+88 13 CursorKind.IF_STMT 6
+89 17 CursorKind.BINARY_OPERATOR 7
+89 17 CursorKind.BINARY_OPERATOR 8
+89 17 CursorKind.PAREN_EXPR 9
+89 18 CursorKind.BINARY_OPERATOR 10
+89 18 CursorKind.BINARY_OPERATOR 11
+89 18 CursorKind.BINARY_OPERATOR 12
+89 18 CursorKind.BINARY_OPERATOR 13
+89 18 CursorKind.UNEXPOSED_EXPR 14
+89 18 CursorKind.INTEGER_LITERAL 15
+############################## 16
+89 21 CursorKind.UNEXPOSED_EXPR 14
+89 21 CursorKind.DECL_REF_EXPR 15
+############################## 16
+89 26 CursorKind.BINARY_OPERATOR 13
+89 26 CursorKind.UNEXPOSED_EXPR 14
+89 26 CursorKind.INTEGER_LITERAL 15
+############################## 16
+89 29 CursorKind.UNEXPOSED_EXPR 14
+89 29 CursorKind.DECL_REF_EXPR 15
+############################## 16
+89 34 CursorKind.UNEXPOSED_EXPR 12
+89 34 CursorKind.INTEGER_LITERAL 13
+############################## 14
+89 40 CursorKind.BINARY_OPERATOR 11
+89 40 CursorKind.UNEXPOSED_EXPR 12
+89 40 CursorKind.UNEXPOSED_EXPR 13
+89 40 CursorKind.DECL_REF_EXPR 14
+############################## 15
+89 47 CursorKind.UNEXPOSED_EXPR 12
+89 47 CursorKind.INTEGER_LITERAL 13
+############################## 14
+90 17 CursorKind.PAREN_EXPR 9
+90 18 CursorKind.BINARY_OPERATOR 10
+90 18 CursorKind.BINARY_OPERATOR 11
+90 18 CursorKind.BINARY_OPERATOR 12
+90 18 CursorKind.BINARY_OPERATOR 13
+90 18 CursorKind.UNEXPOSED_EXPR 14
+90 18 CursorKind.INTEGER_LITERAL 15
+############################## 16
+90 21 CursorKind.UNEXPOSED_EXPR 14
+90 21 CursorKind.DECL_REF_EXPR 15
+############################## 16
+90 26 CursorKind.BINARY_OPERATOR 13
+90 26 CursorKind.UNEXPOSED_EXPR 14
+90 26 CursorKind.INTEGER_LITERAL 15
+############################## 16
+90 29 CursorKind.UNEXPOSED_EXPR 14
+90 29 CursorKind.DECL_REF_EXPR 15
+############################## 16
+90 34 CursorKind.UNEXPOSED_EXPR 12
+90 34 CursorKind.INTEGER_LITERAL 13
+############################## 14
+90 40 CursorKind.BINARY_OPERATOR 11
+90 40 CursorKind.UNEXPOSED_EXPR 12
+90 40 CursorKind.UNEXPOSED_EXPR 13
+90 40 CursorKind.DECL_REF_EXPR 14
+############################## 15
+90 47 CursorKind.UNEXPOSED_EXPR 12
+90 47 CursorKind.INTEGER_LITERAL 13
+############################## 14
+91 17 CursorKind.PAREN_EXPR 8
+91 18 CursorKind.BINARY_OPERATOR 9
+91 18 CursorKind.BINARY_OPERATOR 10
+91 18 CursorKind.UNEXPOSED_EXPR 11
+91 18 CursorKind.UNEXPOSED_EXPR 12
+91 18 CursorKind.DECL_REF_EXPR 13
+############################## 14
+91 25 CursorKind.UNEXPOSED_EXPR 11
+91 25 CursorKind.INTEGER_LITERAL 12
+############################## 13
+91 30 CursorKind.BINARY_OPERATOR 10
+91 30 CursorKind.UNEXPOSED_EXPR 11
+91 30 CursorKind.UNEXPOSED_EXPR 12
+91 30 CursorKind.DECL_REF_EXPR 13
+############################## 14
+91 37 CursorKind.UNEXPOSED_EXPR 11
+91 37 CursorKind.INTEGER_LITERAL 12
+############################## 13
+92 14 CursorKind.COMPOUND_STMT 7
+93 17 CursorKind.BINARY_OPERATOR 8
+93 17 CursorKind.DECL_REF_EXPR 9
+############################## 10
+93 33 CursorKind.UNEXPOSED_EXPR 9
+93 33 CursorKind.DECL_REF_EXPR 10
+############################## 11
+95 17 CursorKind.BINARY_OPERATOR 8
+95 17 CursorKind.DECL_REF_EXPR 9
+############################## 10
+95 22 CursorKind.UNEXPOSED_EXPR 9
+95 22 CursorKind.INTEGER_LITERAL 10
+############################## 11
+99 5 CursorKind.IF_STMT 2
+99 9 CursorKind.BINARY_OPERATOR 3
+99 9 CursorKind.UNEXPOSED_EXPR 4
+99 9 CursorKind.UNEXPOSED_EXPR 5
+99 9 CursorKind.DECL_REF_EXPR 6
+############################## 7
+99 25 CursorKind.UNEXPOSED_EXPR 4
+99 25 CursorKind.DECL_REF_EXPR 5
+############################## 6
+99 31 CursorKind.COMPOUND_STMT 3
+100 9 CursorKind.IF_STMT 4
+100 13 CursorKind.BINARY_OPERATOR 5
+100 13 CursorKind.UNEXPOSED_EXPR 6
+100 13 CursorKind.UNEXPOSED_EXPR 7
+100 13 CursorKind.DECL_REF_EXPR 8
+############################## 9
+100 28 CursorKind.UNEXPOSED_EXPR 6
+100 28 CursorKind.DECL_REF_EXPR 7
+############################## 8
+100 38 CursorKind.COMPOUND_STMT 5
+101 13 CursorKind.IF_STMT 6
+102 17 CursorKind.BINARY_OPERATOR 7
+102 17 CursorKind.PAREN_EXPR 8
+102 18 CursorKind.BINARY_OPERATOR 9
+102 18 CursorKind.BINARY_OPERATOR 10
+102 18 CursorKind.BINARY_OPERATOR 11
+102 18 CursorKind.BINARY_OPERATOR 12
+102 18 CursorKind.BINARY_OPERATOR 13
+102 18 CursorKind.BINARY_OPERATOR 14
+102 18 CursorKind.UNEXPOSED_EXPR 15
+102 18 CursorKind.INTEGER_LITERAL 16
+############################## 17
+102 21 CursorKind.UNEXPOSED_EXPR 15
+102 21 CursorKind.DECL_REF_EXPR 16
+############################## 17
+102 26 CursorKind.BINARY_OPERATOR 14
+102 26 CursorKind.UNEXPOSED_EXPR 15
+102 26 CursorKind.INTEGER_LITERAL 16
+############################## 17
+102 29 CursorKind.UNEXPOSED_EXPR 15
+102 29 CursorKind.DECL_REF_EXPR 16
+############################## 17
+102 34 CursorKind.UNEXPOSED_EXPR 13
+102 34 CursorKind.INTEGER_LITERAL 14
+############################## 15
+103 17 CursorKind.BINARY_OPERATOR 12
+103 17 CursorKind.BINARY_OPERATOR 13
+103 17 CursorKind.BINARY_OPERATOR 14
+103 17 CursorKind.UNEXPOSED_EXPR 15
+103 17 CursorKind.INTEGER_LITERAL 16
+############################## 17
+103 20 CursorKind.UNEXPOSED_EXPR 15
+103 20 CursorKind.DECL_REF_EXPR 16
+############################## 17
+103 25 CursorKind.BINARY_OPERATOR 14
+103 25 CursorKind.UNEXPOSED_EXPR 15
+103 25 CursorKind.INTEGER_LITERAL 16
+############################## 17
+103 28 CursorKind.UNEXPOSED_EXPR 15
+103 28 CursorKind.DECL_REF_EXPR 16
+############################## 17
+103 33 CursorKind.UNEXPOSED_EXPR 13
+103 33 CursorKind.INTEGER_LITERAL 14
+############################## 15
+104 17 CursorKind.BINARY_OPERATOR 11
+104 17 CursorKind.UNEXPOSED_EXPR 12
+104 17 CursorKind.UNEXPOSED_EXPR 13
+104 17 CursorKind.DECL_REF_EXPR 14
+############################## 15
+104 26 CursorKind.UNEXPOSED_EXPR 12
+104 26 CursorKind.DECL_REF_EXPR 13
+############################## 14
+105 17 CursorKind.PAREN_EXPR 10
+105 18 CursorKind.BINARY_OPERATOR 11
+105 18 CursorKind.BINARY_OPERATOR 12
+105 18 CursorKind.BINARY_OPERATOR 13
+105 18 CursorKind.BINARY_OPERATOR 14
+105 18 CursorKind.BINARY_OPERATOR 15
+105 18 CursorKind.UNEXPOSED_EXPR 16
+105 18 CursorKind.INTEGER_LITERAL 17
+############################## 18
+105 21 CursorKind.UNEXPOSED_EXPR 16
+105 21 CursorKind.DECL_REF_EXPR 17
+############################## 18
+105 26 CursorKind.BINARY_OPERATOR 15
+105 26 CursorKind.UNEXPOSED_EXPR 16
+105 26 CursorKind.INTEGER_LITERAL 17
+############################## 18
+105 29 CursorKind.UNEXPOSED_EXPR 16
+105 29 CursorKind.DECL_REF_EXPR 17
+############################## 18
+105 34 CursorKind.UNEXPOSED_EXPR 14
+105 34 CursorKind.INTEGER_LITERAL 15
+############################## 16
+105 40 CursorKind.BINARY_OPERATOR 13
+105 40 CursorKind.UNEXPOSED_EXPR 14
+105 40 CursorKind.DECL_REF_EXPR 15
+############################## 16
+105 46 CursorKind.UNEXPOSED_EXPR 14
+105 46 CursorKind.DECL_REF_EXPR 15
+############################## 16
+105 55 CursorKind.BINARY_OPERATOR 12
+105 55 CursorKind.BINARY_OPERATOR 13
+105 55 CursorKind.UNEXPOSED_EXPR 14
+105 55 CursorKind.DECL_REF_EXPR 15
+############################## 16
+105 60 CursorKind.UNEXPOSED_EXPR 14
+105 60 CursorKind.DECL_REF_EXPR 15
+############################## 16
+105 65 CursorKind.UNEXPOSED_EXPR 13
+105 65 CursorKind.BINARY_OPERATOR 14
+105 65 CursorKind.INTEGER_LITERAL 15
+############################## 16
+105 68 CursorKind.INTEGER_LITERAL 15
+############################## 16
+106 17 CursorKind.PAREN_EXPR 8
+106 18 CursorKind.BINARY_OPERATOR 9
+106 18 CursorKind.BINARY_OPERATOR 10
+106 18 CursorKind.BINARY_OPERATOR 11
+106 18 CursorKind.BINARY_OPERATOR 12
+106 18 CursorKind.BINARY_OPERATOR 13
+106 18 CursorKind.BINARY_OPERATOR 14
+106 18 CursorKind.UNEXPOSED_EXPR 15
+106 18 CursorKind.INTEGER_LITERAL 16
+############################## 17
+106 21 CursorKind.UNEXPOSED_EXPR 15
+106 21 CursorKind.DECL_REF_EXPR 16
+############################## 17
+106 26 CursorKind.BINARY_OPERATOR 14
+106 26 CursorKind.UNEXPOSED_EXPR 15
+106 26 CursorKind.INTEGER_LITERAL 16
+############################## 17
+106 29 CursorKind.UNEXPOSED_EXPR 15
+106 29 CursorKind.DECL_REF_EXPR 16
+############################## 17
+106 34 CursorKind.UNEXPOSED_EXPR 13
+106 34 CursorKind.INTEGER_LITERAL 14
+############################## 15
+107 17 CursorKind.BINARY_OPERATOR 12
+107 17 CursorKind.BINARY_OPERATOR 13
+107 17 CursorKind.BINARY_OPERATOR 14
+107 17 CursorKind.UNEXPOSED_EXPR 15
+107 17 CursorKind.INTEGER_LITERAL 16
+############################## 17
+107 20 CursorKind.UNEXPOSED_EXPR 15
+107 20 CursorKind.DECL_REF_EXPR 16
+############################## 17
+107 25 CursorKind.BINARY_OPERATOR 14
+107 25 CursorKind.UNEXPOSED_EXPR 15
+107 25 CursorKind.INTEGER_LITERAL 16
+############################## 17
+107 28 CursorKind.UNEXPOSED_EXPR 15
+107 28 CursorKind.DECL_REF_EXPR 16
+############################## 17
+107 33 CursorKind.UNEXPOSED_EXPR 13
+107 33 CursorKind.INTEGER_LITERAL 14
+############################## 15
+108 17 CursorKind.BINARY_OPERATOR 11
+108 17 CursorKind.UNEXPOSED_EXPR 12
+108 17 CursorKind.UNEXPOSED_EXPR 13
+108 17 CursorKind.DECL_REF_EXPR 14
+############################## 15
+108 26 CursorKind.UNEXPOSED_EXPR 12
+108 26 CursorKind.DECL_REF_EXPR 13
+############################## 14
+109 17 CursorKind.PAREN_EXPR 10
+109 18 CursorKind.BINARY_OPERATOR 11
+109 18 CursorKind.BINARY_OPERATOR 12
+109 18 CursorKind.BINARY_OPERATOR 13
+109 18 CursorKind.BINARY_OPERATOR 14
+109 18 CursorKind.BINARY_OPERATOR 15
+109 18 CursorKind.UNEXPOSED_EXPR 16
+109 18 CursorKind.INTEGER_LITERAL 17
+############################## 18
+109 21 CursorKind.UNEXPOSED_EXPR 16
+109 21 CursorKind.DECL_REF_EXPR 17
+############################## 18
+109 26 CursorKind.BINARY_OPERATOR 15
+109 26 CursorKind.UNEXPOSED_EXPR 16
+109 26 CursorKind.INTEGER_LITERAL 17
+############################## 18
+109 29 CursorKind.UNEXPOSED_EXPR 16
+109 29 CursorKind.DECL_REF_EXPR 17
+############################## 18
+109 34 CursorKind.UNEXPOSED_EXPR 14
+109 34 CursorKind.INTEGER_LITERAL 15
+############################## 16
+109 40 CursorKind.BINARY_OPERATOR 13
+109 40 CursorKind.UNEXPOSED_EXPR 14
+109 40 CursorKind.DECL_REF_EXPR 15
+############################## 16
+109 46 CursorKind.UNEXPOSED_EXPR 14
+109 46 CursorKind.DECL_REF_EXPR 15
+############################## 16
+109 55 CursorKind.BINARY_OPERATOR 12
+109 55 CursorKind.BINARY_OPERATOR 13
+109 55 CursorKind.UNEXPOSED_EXPR 14
+109 55 CursorKind.DECL_REF_EXPR 15
+############################## 16
+109 60 CursorKind.UNEXPOSED_EXPR 14
+109 60 CursorKind.DECL_REF_EXPR 15
+############################## 16
+109 65 CursorKind.UNEXPOSED_EXPR 13
+109 65 CursorKind.BINARY_OPERATOR 14
+109 65 CursorKind.INTEGER_LITERAL 15
+############################## 16
+109 68 CursorKind.INTEGER_LITERAL 15
+############################## 16
+110 14 CursorKind.COMPOUND_STMT 7
+111 17 CursorKind.BINARY_OPERATOR 8
+111 17 CursorKind.DECL_REF_EXPR 9
+############################## 10
+111 33 CursorKind.UNEXPOSED_EXPR 9
+111 33 CursorKind.DECL_REF_EXPR 10
+############################## 11
+114 13 CursorKind.IF_STMT 6
+115 17 CursorKind.BINARY_OPERATOR 7
+115 17 CursorKind.PAREN_EXPR 8
+115 18 CursorKind.BINARY_OPERATOR 9
+115 18 CursorKind.BINARY_OPERATOR 10
+115 18 CursorKind.BINARY_OPERATOR 11
+115 18 CursorKind.BINARY_OPERATOR 12
+115 18 CursorKind.BINARY_OPERATOR 13
+115 18 CursorKind.BINARY_OPERATOR 14
+115 18 CursorKind.UNEXPOSED_EXPR 15
+115 18 CursorKind.INTEGER_LITERAL 16
+############################## 17
+115 21 CursorKind.UNEXPOSED_EXPR 15
+115 21 CursorKind.DECL_REF_EXPR 16
+############################## 17
+115 26 CursorKind.BINARY_OPERATOR 14
+115 26 CursorKind.UNEXPOSED_EXPR 15
+115 26 CursorKind.INTEGER_LITERAL 16
+############################## 17
+115 29 CursorKind.UNEXPOSED_EXPR 15
+115 29 CursorKind.DECL_REF_EXPR 16
+############################## 17
+115 34 CursorKind.UNEXPOSED_EXPR 13
+115 34 CursorKind.INTEGER_LITERAL 14
+############################## 15
+116 17 CursorKind.BINARY_OPERATOR 12
+116 17 CursorKind.BINARY_OPERATOR 13
+116 17 CursorKind.BINARY_OPERATOR 14
+116 17 CursorKind.UNEXPOSED_EXPR 15
+116 17 CursorKind.INTEGER_LITERAL 16
+############################## 17
+116 20 CursorKind.UNEXPOSED_EXPR 15
+116 20 CursorKind.DECL_REF_EXPR 16
+############################## 17
+116 25 CursorKind.BINARY_OPERATOR 14
+116 25 CursorKind.UNEXPOSED_EXPR 15
+116 25 CursorKind.INTEGER_LITERAL 16
+############################## 17
+116 28 CursorKind.UNEXPOSED_EXPR 15
+116 28 CursorKind.DECL_REF_EXPR 16
+############################## 17
+116 33 CursorKind.UNEXPOSED_EXPR 13
+116 33 CursorKind.INTEGER_LITERAL 14
+############################## 15
+117 17 CursorKind.BINARY_OPERATOR 11
+117 17 CursorKind.UNEXPOSED_EXPR 12
+117 17 CursorKind.UNEXPOSED_EXPR 13
+117 17 CursorKind.DECL_REF_EXPR 14
+############################## 15
+117 26 CursorKind.UNEXPOSED_EXPR 12
+117 26 CursorKind.DECL_REF_EXPR 13
+############################## 14
+118 17 CursorKind.PAREN_EXPR 10
+118 18 CursorKind.BINARY_OPERATOR 11
+118 18 CursorKind.BINARY_OPERATOR 12
+118 18 CursorKind.BINARY_OPERATOR 13
+118 18 CursorKind.BINARY_OPERATOR 14
+118 18 CursorKind.BINARY_OPERATOR 15
+118 18 CursorKind.UNEXPOSED_EXPR 16
+118 18 CursorKind.INTEGER_LITERAL 17
+############################## 18
+118 21 CursorKind.UNEXPOSED_EXPR 16
+118 21 CursorKind.DECL_REF_EXPR 17
+############################## 18
+118 26 CursorKind.BINARY_OPERATOR 15
+118 26 CursorKind.UNEXPOSED_EXPR 16
+118 26 CursorKind.INTEGER_LITERAL 17
+############################## 18
+118 29 CursorKind.UNEXPOSED_EXPR 16
+118 29 CursorKind.DECL_REF_EXPR 17
+############################## 18
+118 34 CursorKind.UNEXPOSED_EXPR 14
+118 34 CursorKind.INTEGER_LITERAL 15
+############################## 16
+118 40 CursorKind.BINARY_OPERATOR 13
+118 40 CursorKind.UNEXPOSED_EXPR 14
+118 40 CursorKind.DECL_REF_EXPR 15
+############################## 16
+118 46 CursorKind.UNEXPOSED_EXPR 14
+118 46 CursorKind.DECL_REF_EXPR 15
+############################## 16
+118 55 CursorKind.BINARY_OPERATOR 12
+118 55 CursorKind.BINARY_OPERATOR 13
+118 55 CursorKind.UNEXPOSED_EXPR 14
+118 55 CursorKind.DECL_REF_EXPR 15
+############################## 16
+118 60 CursorKind.UNEXPOSED_EXPR 14
+118 60 CursorKind.DECL_REF_EXPR 15
+############################## 16
+118 65 CursorKind.UNEXPOSED_EXPR 13
+118 65 CursorKind.BINARY_OPERATOR 14
+118 65 CursorKind.INTEGER_LITERAL 15
+############################## 16
+118 68 CursorKind.INTEGER_LITERAL 15
+############################## 16
+119 17 CursorKind.PAREN_EXPR 8
+119 18 CursorKind.BINARY_OPERATOR 9
+119 18 CursorKind.BINARY_OPERATOR 10
+119 18 CursorKind.BINARY_OPERATOR 11
+119 18 CursorKind.BINARY_OPERATOR 12
+119 18 CursorKind.BINARY_OPERATOR 13
+119 18 CursorKind.BINARY_OPERATOR 14
+119 18 CursorKind.UNEXPOSED_EXPR 15
+119 18 CursorKind.INTEGER_LITERAL 16
+############################## 17
+119 21 CursorKind.UNEXPOSED_EXPR 15
+119 21 CursorKind.DECL_REF_EXPR 16
+############################## 17
+119 26 CursorKind.BINARY_OPERATOR 14
+119 26 CursorKind.UNEXPOSED_EXPR 15
+119 26 CursorKind.INTEGER_LITERAL 16
+############################## 17
+119 29 CursorKind.UNEXPOSED_EXPR 15
+119 29 CursorKind.DECL_REF_EXPR 16
+############################## 17
+119 34 CursorKind.UNEXPOSED_EXPR 13
+119 34 CursorKind.INTEGER_LITERAL 14
+############################## 15
+120 17 CursorKind.BINARY_OPERATOR 12
+120 17 CursorKind.BINARY_OPERATOR 13
+120 17 CursorKind.BINARY_OPERATOR 14
+120 17 CursorKind.UNEXPOSED_EXPR 15
+120 17 CursorKind.INTEGER_LITERAL 16
+############################## 17
+120 20 CursorKind.UNEXPOSED_EXPR 15
+120 20 CursorKind.DECL_REF_EXPR 16
+############################## 17
+120 25 CursorKind.BINARY_OPERATOR 14
+120 25 CursorKind.UNEXPOSED_EXPR 15
+120 25 CursorKind.INTEGER_LITERAL 16
+############################## 17
+120 28 CursorKind.UNEXPOSED_EXPR 15
+120 28 CursorKind.DECL_REF_EXPR 16
+############################## 17
+120 33 CursorKind.UNEXPOSED_EXPR 13
+120 33 CursorKind.INTEGER_LITERAL 14
+############################## 15
+121 17 CursorKind.BINARY_OPERATOR 11
+121 17 CursorKind.UNEXPOSED_EXPR 12
+121 17 CursorKind.UNEXPOSED_EXPR 13
+121 17 CursorKind.DECL_REF_EXPR 14
+############################## 15
+121 26 CursorKind.UNEXPOSED_EXPR 12
+121 26 CursorKind.DECL_REF_EXPR 13
+############################## 14
+122 17 CursorKind.PAREN_EXPR 10
+122 18 CursorKind.BINARY_OPERATOR 11
+122 18 CursorKind.BINARY_OPERATOR 12
+122 18 CursorKind.BINARY_OPERATOR 13
+122 18 CursorKind.BINARY_OPERATOR 14
+122 18 CursorKind.BINARY_OPERATOR 15
+122 18 CursorKind.UNEXPOSED_EXPR 16
+122 18 CursorKind.INTEGER_LITERAL 17
+############################## 18
+122 21 CursorKind.UNEXPOSED_EXPR 16
+122 21 CursorKind.DECL_REF_EXPR 17
+############################## 18
+122 26 CursorKind.BINARY_OPERATOR 15
+122 26 CursorKind.UNEXPOSED_EXPR 16
+122 26 CursorKind.INTEGER_LITERAL 17
+############################## 18
+122 29 CursorKind.UNEXPOSED_EXPR 16
+122 29 CursorKind.DECL_REF_EXPR 17
+############################## 18
+122 34 CursorKind.UNEXPOSED_EXPR 14
+122 34 CursorKind.INTEGER_LITERAL 15
+############################## 16
+122 40 CursorKind.BINARY_OPERATOR 13
+122 40 CursorKind.UNEXPOSED_EXPR 14
+122 40 CursorKind.DECL_REF_EXPR 15
+############################## 16
+122 46 CursorKind.UNEXPOSED_EXPR 14
+122 46 CursorKind.DECL_REF_EXPR 15
+############################## 16
+122 55 CursorKind.BINARY_OPERATOR 12
+122 55 CursorKind.BINARY_OPERATOR 13
+122 55 CursorKind.UNEXPOSED_EXPR 14
+122 55 CursorKind.DECL_REF_EXPR 15
+############################## 16
+122 60 CursorKind.UNEXPOSED_EXPR 14
+122 60 CursorKind.DECL_REF_EXPR 15
+############################## 16
+122 65 CursorKind.UNEXPOSED_EXPR 13
+122 65 CursorKind.BINARY_OPERATOR 14
+122 65 CursorKind.INTEGER_LITERAL 15
+############################## 16
+122 68 CursorKind.INTEGER_LITERAL 15
+############################## 16
+123 14 CursorKind.COMPOUND_STMT 7
+124 17 CursorKind.BINARY_OPERATOR 8
+124 17 CursorKind.DECL_REF_EXPR 9
+############################## 10
+124 33 CursorKind.UNEXPOSED_EXPR 9
+124 33 CursorKind.DECL_REF_EXPR 10
+############################## 11
+127 13 CursorKind.IF_STMT 6
+128 17 CursorKind.BINARY_OPERATOR 7
+128 17 CursorKind.PAREN_EXPR 8
+128 18 CursorKind.BINARY_OPERATOR 9
+128 18 CursorKind.BINARY_OPERATOR 10
+128 18 CursorKind.BINARY_OPERATOR 11
+128 18 CursorKind.BINARY_OPERATOR 12
+128 18 CursorKind.BINARY_OPERATOR 13
+128 18 CursorKind.UNEXPOSED_EXPR 14
+128 18 CursorKind.INTEGER_LITERAL 15
+############################## 16
+128 21 CursorKind.UNEXPOSED_EXPR 14
+128 21 CursorKind.DECL_REF_EXPR 15
+############################## 16
+128 26 CursorKind.BINARY_OPERATOR 13
+128 26 CursorKind.UNEXPOSED_EXPR 14
+128 26 CursorKind.INTEGER_LITERAL 15
+############################## 16
+128 29 CursorKind.UNEXPOSED_EXPR 14
+128 29 CursorKind.DECL_REF_EXPR 15
+############################## 16
+128 34 CursorKind.UNEXPOSED_EXPR 12
+128 34 CursorKind.INTEGER_LITERAL 13
+############################## 14
+129 17 CursorKind.BINARY_OPERATOR 11
+129 17 CursorKind.BINARY_OPERATOR 12
+129 17 CursorKind.BINARY_OPERATOR 13
+129 17 CursorKind.UNEXPOSED_EXPR 14
+129 17 CursorKind.INTEGER_LITERAL 15
+############################## 16
+129 20 CursorKind.UNEXPOSED_EXPR 14
+129 20 CursorKind.DECL_REF_EXPR 15
+############################## 16
+129 25 CursorKind.BINARY_OPERATOR 13
+129 25 CursorKind.UNEXPOSED_EXPR 14
+129 25 CursorKind.INTEGER_LITERAL 15
+############################## 16
+129 28 CursorKind.UNEXPOSED_EXPR 14
+129 28 CursorKind.DECL_REF_EXPR 15
+############################## 16
+129 33 CursorKind.UNEXPOSED_EXPR 12
+129 33 CursorKind.INTEGER_LITERAL 13
+############################## 14
+130 17 CursorKind.BINARY_OPERATOR 10
+130 17 CursorKind.UNEXPOSED_EXPR 11
+130 17 CursorKind.UNEXPOSED_EXPR 12
+130 17 CursorKind.DECL_REF_EXPR 13
+############################## 14
+130 26 CursorKind.UNEXPOSED_EXPR 11
+130 26 CursorKind.DECL_REF_EXPR 12
+############################## 13
+131 17 CursorKind.PAREN_EXPR 8
+131 18 CursorKind.BINARY_OPERATOR 9
+131 18 CursorKind.BINARY_OPERATOR 10
+131 18 CursorKind.BINARY_OPERATOR 11
+131 18 CursorKind.BINARY_OPERATOR 12
+131 18 CursorKind.BINARY_OPERATOR 13
+131 18 CursorKind.UNEXPOSED_EXPR 14
+131 18 CursorKind.INTEGER_LITERAL 15
+############################## 16
+131 21 CursorKind.UNEXPOSED_EXPR 14
+131 21 CursorKind.DECL_REF_EXPR 15
+############################## 16
+131 26 CursorKind.BINARY_OPERATOR 13
+131 26 CursorKind.UNEXPOSED_EXPR 14
+131 26 CursorKind.INTEGER_LITERAL 15
+############################## 16
+131 29 CursorKind.UNEXPOSED_EXPR 14
+131 29 CursorKind.DECL_REF_EXPR 15
+############################## 16
+131 34 CursorKind.UNEXPOSED_EXPR 12
+131 34 CursorKind.INTEGER_LITERAL 13
+############################## 14
+132 17 CursorKind.BINARY_OPERATOR 11
+132 17 CursorKind.BINARY_OPERATOR 12
+132 17 CursorKind.BINARY_OPERATOR 13
+132 17 CursorKind.UNEXPOSED_EXPR 14
+132 17 CursorKind.INTEGER_LITERAL 15
+############################## 16
+132 20 CursorKind.UNEXPOSED_EXPR 14
+132 20 CursorKind.DECL_REF_EXPR 15
+############################## 16
+132 25 CursorKind.BINARY_OPERATOR 13
+132 25 CursorKind.UNEXPOSED_EXPR 14
+132 25 CursorKind.INTEGER_LITERAL 15
+############################## 16
+132 28 CursorKind.UNEXPOSED_EXPR 14
+132 28 CursorKind.DECL_REF_EXPR 15
+############################## 16
+132 33 CursorKind.UNEXPOSED_EXPR 12
+132 33 CursorKind.INTEGER_LITERAL 13
+############################## 14
+133 17 CursorKind.BINARY_OPERATOR 10
+133 17 CursorKind.UNEXPOSED_EXPR 11
+133 17 CursorKind.UNEXPOSED_EXPR 12
+133 17 CursorKind.DECL_REF_EXPR 13
+############################## 14
+133 26 CursorKind.UNEXPOSED_EXPR 11
+133 26 CursorKind.DECL_REF_EXPR 12
+############################## 13
+134 14 CursorKind.COMPOUND_STMT 7
+135 17 CursorKind.BINARY_OPERATOR 8
+135 17 CursorKind.DECL_REF_EXPR 9
+############################## 10
+135 33 CursorKind.UNEXPOSED_EXPR 9
+135 33 CursorKind.DECL_REF_EXPR 10
+############################## 11
+137 17 CursorKind.BINARY_OPERATOR 8
+137 17 CursorKind.DECL_REF_EXPR 9
+############################## 10
+137 22 CursorKind.UNEXPOSED_EXPR 9
+137 22 CursorKind.INTEGER_LITERAL 10
+############################## 11
+140 9 CursorKind.IF_STMT 4
+140 13 CursorKind.BINARY_OPERATOR 5
+140 13 CursorKind.UNEXPOSED_EXPR 6
+140 13 CursorKind.UNEXPOSED_EXPR 7
+140 13 CursorKind.DECL_REF_EXPR 8
+############################## 9
+140 28 CursorKind.UNEXPOSED_EXPR 6
+140 28 CursorKind.DECL_REF_EXPR 7
+############################## 8
+140 40 CursorKind.COMPOUND_STMT 5
+141 13 CursorKind.IF_STMT 6
+141 16 CursorKind.BINARY_OPERATOR 7
+141 16 CursorKind.UNEXPOSED_EXPR 8
+141 16 CursorKind.DECL_REF_EXPR 9
+############################## 10
+141 21 CursorKind.FLOATING_LITERAL 8
+############################## 9
+141 25 CursorKind.COMPOUND_STMT 7
+142 17 CursorKind.BINARY_OPERATOR 8
+142 17 CursorKind.DECL_REF_EXPR 9
+############################## 10
+142 33 CursorKind.UNEXPOSED_EXPR 9
+142 33 CursorKind.DECL_REF_EXPR 10
+############################## 11
+143 17 CursorKind.BINARY_OPERATOR 8
+143 17 CursorKind.DECL_REF_EXPR 9
+############################## 10
+143 32 CursorKind.UNEXPOSED_EXPR 9
+143 32 CursorKind.DECL_REF_EXPR 10
+############################## 11
+145 17 CursorKind.BINARY_OPERATOR 8
+145 17 CursorKind.DECL_REF_EXPR 9
+############################## 10
+145 23 CursorKind.BINARY_OPERATOR 9
+145 23 CursorKind.UNEXPOSED_EXPR 10
+145 23 CursorKind.DECL_REF_EXPR 11
+############################## 12
+145 27 CursorKind.UNEXPOSED_EXPR 10
+145 27 CursorKind.INTEGER_LITERAL 11
+############################## 12
+148 9 CursorKind.IF_STMT 4
+148 13 CursorKind.BINARY_OPERATOR 5
+148 13 CursorKind.UNEXPOSED_EXPR 6
+148 13 CursorKind.UNEXPOSED_EXPR 7
+148 13 CursorKind.DECL_REF_EXPR 8
+############################## 9
+148 28 CursorKind.UNEXPOSED_EXPR 6
+148 28 CursorKind.DECL_REF_EXPR 7
+############################## 8
+148 41 CursorKind.COMPOUND_STMT 5
+149 13 CursorKind.IF_STMT 6
+149 16 CursorKind.BINARY_OPERATOR 7
+149 16 CursorKind.UNEXPOSED_EXPR 8
+149 16 CursorKind.DECL_REF_EXPR 9
+############################## 10
+149 21 CursorKind.UNARY_OPERATOR 8
+149 22 CursorKind.FLOATING_LITERAL 9
+############################## 10
+149 26 CursorKind.COMPOUND_STMT 7
+150 17 CursorKind.BINARY_OPERATOR 8
+150 17 CursorKind.DECL_REF_EXPR 9
+############################## 10
+150 33 CursorKind.UNEXPOSED_EXPR 9
+150 33 CursorKind.DECL_REF_EXPR 10
+############################## 11
+151 17 CursorKind.BINARY_OPERATOR 8
+151 17 CursorKind.DECL_REF_EXPR 9
+############################## 10
+151 32 CursorKind.UNEXPOSED_EXPR 9
+151 32 CursorKind.DECL_REF_EXPR 10
+############################## 11
+153 17 CursorKind.BINARY_OPERATOR 8
+153 17 CursorKind.DECL_REF_EXPR 9
+############################## 10
+153 23 CursorKind.BINARY_OPERATOR 9
+153 23 CursorKind.UNEXPOSED_EXPR 10
+153 23 CursorKind.DECL_REF_EXPR 11
+############################## 12
+153 27 CursorKind.UNEXPOSED_EXPR 10
+153 27 CursorKind.INTEGER_LITERAL 11
+############################## 12
+156 9 CursorKind.IF_STMT 4
+156 13 CursorKind.BINARY_OPERATOR 5
+156 13 CursorKind.UNEXPOSED_EXPR 6
+156 13 CursorKind.UNEXPOSED_EXPR 7
+156 13 CursorKind.DECL_REF_EXPR 8
+############################## 9
+156 28 CursorKind.UNEXPOSED_EXPR 6
+156 28 CursorKind.DECL_REF_EXPR 7
+############################## 8
+156 33 CursorKind.COMPOUND_STMT 5
+157 13 CursorKind.IF_STMT 6
+158 17 CursorKind.BINARY_OPERATOR 7
+158 17 CursorKind.BINARY_OPERATOR 8
+158 17 CursorKind.PAREN_EXPR 9
+158 18 CursorKind.BINARY_OPERATOR 10
+158 18 CursorKind.BINARY_OPERATOR 11
+158 18 CursorKind.BINARY_OPERATOR 12
+158 18 CursorKind.BINARY_OPERATOR 13
+158 18 CursorKind.UNEXPOSED_EXPR 14
+158 18 CursorKind.INTEGER_LITERAL 15
+############################## 16
+158 21 CursorKind.UNEXPOSED_EXPR 14
+158 21 CursorKind.DECL_REF_EXPR 15
+############################## 16
+158 26 CursorKind.BINARY_OPERATOR 13
+158 26 CursorKind.UNEXPOSED_EXPR 14
+158 26 CursorKind.INTEGER_LITERAL 15
+############################## 16
+158 29 CursorKind.UNEXPOSED_EXPR 14
+158 29 CursorKind.DECL_REF_EXPR 15
+############################## 16
+158 34 CursorKind.UNEXPOSED_EXPR 12
+158 34 CursorKind.INTEGER_LITERAL 13
+############################## 14
+158 40 CursorKind.BINARY_OPERATOR 11
+158 40 CursorKind.UNEXPOSED_EXPR 12
+158 40 CursorKind.UNEXPOSED_EXPR 13
+158 40 CursorKind.DECL_REF_EXPR 14
+############################## 15
+158 47 CursorKind.UNEXPOSED_EXPR 12
+158 47 CursorKind.INTEGER_LITERAL 13
+############################## 14
+159 17 CursorKind.PAREN_EXPR 9
+159 18 CursorKind.BINARY_OPERATOR 10
+159 18 CursorKind.BINARY_OPERATOR 11
+159 18 CursorKind.BINARY_OPERATOR 12
+159 18 CursorKind.BINARY_OPERATOR 13
+159 18 CursorKind.UNEXPOSED_EXPR 14
+159 18 CursorKind.INTEGER_LITERAL 15
+############################## 16
+159 21 CursorKind.UNEXPOSED_EXPR 14
+159 21 CursorKind.DECL_REF_EXPR 15
+############################## 16
+159 26 CursorKind.BINARY_OPERATOR 13
+159 26 CursorKind.UNEXPOSED_EXPR 14
+159 26 CursorKind.INTEGER_LITERAL 15
+############################## 16
+159 29 CursorKind.UNEXPOSED_EXPR 14
+159 29 CursorKind.DECL_REF_EXPR 15
+############################## 16
+159 34 CursorKind.UNEXPOSED_EXPR 12
+159 34 CursorKind.INTEGER_LITERAL 13
+############################## 14
+159 40 CursorKind.BINARY_OPERATOR 11
+159 40 CursorKind.UNEXPOSED_EXPR 12
+159 40 CursorKind.UNEXPOSED_EXPR 13
+159 40 CursorKind.DECL_REF_EXPR 14
+############################## 15
+159 47 CursorKind.UNEXPOSED_EXPR 12
+159 47 CursorKind.INTEGER_LITERAL 13
+############################## 14
+160 17 CursorKind.PAREN_EXPR 8
+160 18 CursorKind.BINARY_OPERATOR 9
+160 18 CursorKind.BINARY_OPERATOR 10
+160 18 CursorKind.UNEXPOSED_EXPR 11
+160 18 CursorKind.UNEXPOSED_EXPR 12
+160 18 CursorKind.DECL_REF_EXPR 13
+############################## 14
+160 25 CursorKind.UNEXPOSED_EXPR 11
+160 25 CursorKind.INTEGER_LITERAL 12
+############################## 13
+160 30 CursorKind.BINARY_OPERATOR 10
+160 30 CursorKind.UNEXPOSED_EXPR 11
+160 30 CursorKind.UNEXPOSED_EXPR 12
+160 30 CursorKind.DECL_REF_EXPR 13
+############################## 14
+160 37 CursorKind.UNEXPOSED_EXPR 11
+160 37 CursorKind.INTEGER_LITERAL 12
+############################## 13
+161 14 CursorKind.COMPOUND_STMT 7
+162 17 CursorKind.BINARY_OPERATOR 8
+162 17 CursorKind.DECL_REF_EXPR 9
+############################## 10
+162 33 CursorKind.UNEXPOSED_EXPR 9
+162 33 CursorKind.DECL_REF_EXPR 10
+############################## 11
+164 17 CursorKind.BINARY_OPERATOR 8
+164 17 CursorKind.DECL_REF_EXPR 9
+############################## 10
+164 22 CursorKind.UNEXPOSED_EXPR 9
+164 22 CursorKind.INTEGER_LITERAL 10
+############################## 11
+168 5 CursorKind.IF_STMT 2
+168 9 CursorKind.BINARY_OPERATOR 3
+168 9 CursorKind.UNEXPOSED_EXPR 4
+168 9 CursorKind.UNEXPOSED_EXPR 5
+168 9 CursorKind.DECL_REF_EXPR 6
+############################## 7
+168 25 CursorKind.UNEXPOSED_EXPR 4
+168 25 CursorKind.DECL_REF_EXPR 5
+############################## 6
+168 31 CursorKind.COMPOUND_STMT 3
+169 9 CursorKind.IF_STMT 4
+169 13 CursorKind.BINARY_OPERATOR 5
+169 13 CursorKind.UNEXPOSED_EXPR 6
+169 13 CursorKind.UNEXPOSED_EXPR 7
+169 13 CursorKind.DECL_REF_EXPR 8
+############################## 9
+169 28 CursorKind.UNEXPOSED_EXPR 6
+169 28 CursorKind.DECL_REF_EXPR 7
+############################## 8
+169 38 CursorKind.COMPOUND_STMT 5
+170 13 CursorKind.IF_STMT 6
+171 17 CursorKind.BINARY_OPERATOR 7
+171 17 CursorKind.PAREN_EXPR 8
+171 18 CursorKind.BINARY_OPERATOR 9
+171 18 CursorKind.BINARY_OPERATOR 10
+171 18 CursorKind.BINARY_OPERATOR 11
+171 18 CursorKind.BINARY_OPERATOR 12
+171 18 CursorKind.BINARY_OPERATOR 13
+171 18 CursorKind.BINARY_OPERATOR 14
+171 18 CursorKind.UNEXPOSED_EXPR 15
+171 18 CursorKind.INTEGER_LITERAL 16
+############################## 17
+171 21 CursorKind.UNEXPOSED_EXPR 15
+171 21 CursorKind.DECL_REF_EXPR 16
+############################## 17
+171 26 CursorKind.BINARY_OPERATOR 14
+171 26 CursorKind.UNEXPOSED_EXPR 15
+171 26 CursorKind.INTEGER_LITERAL 16
+############################## 17
+171 29 CursorKind.UNEXPOSED_EXPR 15
+171 29 CursorKind.DECL_REF_EXPR 16
+############################## 17
+171 34 CursorKind.UNEXPOSED_EXPR 13
+171 34 CursorKind.INTEGER_LITERAL 14
+############################## 15
+172 17 CursorKind.BINARY_OPERATOR 12
+172 17 CursorKind.BINARY_OPERATOR 13
+172 17 CursorKind.BINARY_OPERATOR 14
+172 17 CursorKind.UNEXPOSED_EXPR 15
+172 17 CursorKind.INTEGER_LITERAL 16
+############################## 17
+172 20 CursorKind.UNEXPOSED_EXPR 15
+172 20 CursorKind.DECL_REF_EXPR 16
+############################## 17
+172 25 CursorKind.BINARY_OPERATOR 14
+172 25 CursorKind.UNEXPOSED_EXPR 15
+172 25 CursorKind.INTEGER_LITERAL 16
+############################## 17
+172 28 CursorKind.UNEXPOSED_EXPR 15
+172 28 CursorKind.DECL_REF_EXPR 16
+############################## 17
+172 33 CursorKind.UNEXPOSED_EXPR 13
+172 33 CursorKind.INTEGER_LITERAL 14
+############################## 15
+173 17 CursorKind.BINARY_OPERATOR 11
+173 17 CursorKind.UNEXPOSED_EXPR 12
+173 17 CursorKind.UNEXPOSED_EXPR 13
+173 17 CursorKind.DECL_REF_EXPR 14
+############################## 15
+173 26 CursorKind.UNEXPOSED_EXPR 12
+173 26 CursorKind.DECL_REF_EXPR 13
+############################## 14
+174 17 CursorKind.PAREN_EXPR 10
+174 18 CursorKind.BINARY_OPERATOR 11
+174 18 CursorKind.BINARY_OPERATOR 12
+174 18 CursorKind.BINARY_OPERATOR 13
+174 18 CursorKind.BINARY_OPERATOR 14
+174 18 CursorKind.BINARY_OPERATOR 15
+174 18 CursorKind.UNEXPOSED_EXPR 16
+174 18 CursorKind.INTEGER_LITERAL 17
+############################## 18
+174 21 CursorKind.UNEXPOSED_EXPR 16
+174 21 CursorKind.DECL_REF_EXPR 17
+############################## 18
+174 26 CursorKind.BINARY_OPERATOR 15
+174 26 CursorKind.UNEXPOSED_EXPR 16
+174 26 CursorKind.INTEGER_LITERAL 17
+############################## 18
+174 29 CursorKind.UNEXPOSED_EXPR 16
+174 29 CursorKind.DECL_REF_EXPR 17
+############################## 18
+174 34 CursorKind.UNEXPOSED_EXPR 14
+174 34 CursorKind.INTEGER_LITERAL 15
+############################## 16
+174 40 CursorKind.BINARY_OPERATOR 13
+174 40 CursorKind.UNEXPOSED_EXPR 14
+174 40 CursorKind.DECL_REF_EXPR 15
+############################## 16
+174 46 CursorKind.UNEXPOSED_EXPR 14
+174 46 CursorKind.DECL_REF_EXPR 15
+############################## 16
+174 55 CursorKind.BINARY_OPERATOR 12
+174 55 CursorKind.BINARY_OPERATOR 13
+174 55 CursorKind.UNEXPOSED_EXPR 14
+174 55 CursorKind.DECL_REF_EXPR 15
+############################## 16
+174 60 CursorKind.UNEXPOSED_EXPR 14
+174 60 CursorKind.DECL_REF_EXPR 15
+############################## 16
+174 65 CursorKind.UNEXPOSED_EXPR 13
+174 65 CursorKind.BINARY_OPERATOR 14
+174 65 CursorKind.INTEGER_LITERAL 15
+############################## 16
+174 68 CursorKind.INTEGER_LITERAL 15
+############################## 16
+175 17 CursorKind.PAREN_EXPR 8
+175 18 CursorKind.BINARY_OPERATOR 9
+175 18 CursorKind.BINARY_OPERATOR 10
+175 18 CursorKind.BINARY_OPERATOR 11
+175 18 CursorKind.BINARY_OPERATOR 12
+175 18 CursorKind.BINARY_OPERATOR 13
+175 18 CursorKind.BINARY_OPERATOR 14
+175 18 CursorKind.UNEXPOSED_EXPR 15
+175 18 CursorKind.INTEGER_LITERAL 16
+############################## 17
+175 21 CursorKind.UNEXPOSED_EXPR 15
+175 21 CursorKind.DECL_REF_EXPR 16
+############################## 17
+175 26 CursorKind.BINARY_OPERATOR 14
+175 26 CursorKind.UNEXPOSED_EXPR 15
+175 26 CursorKind.INTEGER_LITERAL 16
+############################## 17
+175 29 CursorKind.UNEXPOSED_EXPR 15
+175 29 CursorKind.DECL_REF_EXPR 16
+############################## 17
+175 34 CursorKind.UNEXPOSED_EXPR 13
+175 34 CursorKind.INTEGER_LITERAL 14
+############################## 15
+176 17 CursorKind.BINARY_OPERATOR 12
+176 17 CursorKind.BINARY_OPERATOR 13
+176 17 CursorKind.BINARY_OPERATOR 14
+176 17 CursorKind.UNEXPOSED_EXPR 15
+176 17 CursorKind.INTEGER_LITERAL 16
+############################## 17
+176 20 CursorKind.UNEXPOSED_EXPR 15
+176 20 CursorKind.DECL_REF_EXPR 16
+############################## 17
+176 25 CursorKind.BINARY_OPERATOR 14
+176 25 CursorKind.UNEXPOSED_EXPR 15
+176 25 CursorKind.INTEGER_LITERAL 16
+############################## 17
+176 28 CursorKind.UNEXPOSED_EXPR 15
+176 28 CursorKind.DECL_REF_EXPR 16
+############################## 17
+176 33 CursorKind.UNEXPOSED_EXPR 13
+176 33 CursorKind.INTEGER_LITERAL 14
+############################## 15
+177 17 CursorKind.BINARY_OPERATOR 11
+177 17 CursorKind.UNEXPOSED_EXPR 12
+177 17 CursorKind.UNEXPOSED_EXPR 13
+177 17 CursorKind.DECL_REF_EXPR 14
+############################## 15
+177 26 CursorKind.UNEXPOSED_EXPR 12
+177 26 CursorKind.DECL_REF_EXPR 13
+############################## 14
+178 17 CursorKind.PAREN_EXPR 10
+178 18 CursorKind.BINARY_OPERATOR 11
+178 18 CursorKind.BINARY_OPERATOR 12
+178 18 CursorKind.BINARY_OPERATOR 13
+178 18 CursorKind.BINARY_OPERATOR 14
+178 18 CursorKind.BINARY_OPERATOR 15
+178 18 CursorKind.UNEXPOSED_EXPR 16
+178 18 CursorKind.INTEGER_LITERAL 17
+############################## 18
+178 21 CursorKind.UNEXPOSED_EXPR 16
+178 21 CursorKind.DECL_REF_EXPR 17
+############################## 18
+178 26 CursorKind.BINARY_OPERATOR 15
+178 26 CursorKind.UNEXPOSED_EXPR 16
+178 26 CursorKind.INTEGER_LITERAL 17
+############################## 18
+178 29 CursorKind.UNEXPOSED_EXPR 16
+178 29 CursorKind.DECL_REF_EXPR 17
+############################## 18
+178 34 CursorKind.UNEXPOSED_EXPR 14
+178 34 CursorKind.INTEGER_LITERAL 15
+############################## 16
+178 40 CursorKind.BINARY_OPERATOR 13
+178 40 CursorKind.UNEXPOSED_EXPR 14
+178 40 CursorKind.DECL_REF_EXPR 15
+############################## 16
+178 46 CursorKind.UNEXPOSED_EXPR 14
+178 46 CursorKind.DECL_REF_EXPR 15
+############################## 16
+178 55 CursorKind.BINARY_OPERATOR 12
+178 55 CursorKind.BINARY_OPERATOR 13
+178 55 CursorKind.UNEXPOSED_EXPR 14
+178 55 CursorKind.DECL_REF_EXPR 15
+############################## 16
+178 60 CursorKind.UNEXPOSED_EXPR 14
+178 60 CursorKind.DECL_REF_EXPR 15
+############################## 16
+178 65 CursorKind.UNEXPOSED_EXPR 13
+178 65 CursorKind.BINARY_OPERATOR 14
+178 65 CursorKind.INTEGER_LITERAL 15
+############################## 16
+178 68 CursorKind.INTEGER_LITERAL 15
+############################## 16
+179 14 CursorKind.COMPOUND_STMT 7
+180 17 CursorKind.BINARY_OPERATOR 8
+180 17 CursorKind.DECL_REF_EXPR 9
+############################## 10
+180 33 CursorKind.UNEXPOSED_EXPR 9
+180 33 CursorKind.DECL_REF_EXPR 10
+############################## 11
+183 13 CursorKind.IF_STMT 6
+184 17 CursorKind.BINARY_OPERATOR 7
+184 17 CursorKind.PAREN_EXPR 8
+184 18 CursorKind.BINARY_OPERATOR 9
+184 18 CursorKind.BINARY_OPERATOR 10
+184 18 CursorKind.BINARY_OPERATOR 11
+184 18 CursorKind.BINARY_OPERATOR 12
+184 18 CursorKind.BINARY_OPERATOR 13
+184 18 CursorKind.UNEXPOSED_EXPR 14
+184 18 CursorKind.INTEGER_LITERAL 15
+############################## 16
+184 21 CursorKind.UNEXPOSED_EXPR 14
+184 21 CursorKind.DECL_REF_EXPR 15
+############################## 16
+184 26 CursorKind.BINARY_OPERATOR 13
+184 26 CursorKind.UNEXPOSED_EXPR 14
+184 26 CursorKind.INTEGER_LITERAL 15
+############################## 16
+184 29 CursorKind.UNEXPOSED_EXPR 14
+184 29 CursorKind.DECL_REF_EXPR 15
+############################## 16
+184 34 CursorKind.UNEXPOSED_EXPR 12
+184 34 CursorKind.INTEGER_LITERAL 13
+############################## 14
+185 17 CursorKind.BINARY_OPERATOR 11
+185 17 CursorKind.BINARY_OPERATOR 12
+185 17 CursorKind.BINARY_OPERATOR 13
+185 17 CursorKind.UNEXPOSED_EXPR 14
+185 17 CursorKind.INTEGER_LITERAL 15
+############################## 16
+185 20 CursorKind.UNEXPOSED_EXPR 14
+185 20 CursorKind.DECL_REF_EXPR 15
+############################## 16
+185 25 CursorKind.BINARY_OPERATOR 13
+185 25 CursorKind.UNEXPOSED_EXPR 14
+185 25 CursorKind.INTEGER_LITERAL 15
+############################## 16
+185 28 CursorKind.UNEXPOSED_EXPR 14
+185 28 CursorKind.DECL_REF_EXPR 15
+############################## 16
+185 33 CursorKind.UNEXPOSED_EXPR 12
+185 33 CursorKind.INTEGER_LITERAL 13
+############################## 14
+186 17 CursorKind.BINARY_OPERATOR 10
+186 17 CursorKind.UNEXPOSED_EXPR 11
+186 17 CursorKind.UNEXPOSED_EXPR 12
+186 17 CursorKind.DECL_REF_EXPR 13
+############################## 14
+186 26 CursorKind.UNEXPOSED_EXPR 11
+186 26 CursorKind.DECL_REF_EXPR 12
+############################## 13
+187 17 CursorKind.PAREN_EXPR 8
+187 18 CursorKind.BINARY_OPERATOR 9
+187 18 CursorKind.BINARY_OPERATOR 10
+187 18 CursorKind.BINARY_OPERATOR 11
+187 18 CursorKind.BINARY_OPERATOR 12
+187 18 CursorKind.BINARY_OPERATOR 13
+187 18 CursorKind.UNEXPOSED_EXPR 14
+187 18 CursorKind.INTEGER_LITERAL 15
+############################## 16
+187 21 CursorKind.UNEXPOSED_EXPR 14
+187 21 CursorKind.DECL_REF_EXPR 15
+############################## 16
+187 26 CursorKind.BINARY_OPERATOR 13
+187 26 CursorKind.UNEXPOSED_EXPR 14
+187 26 CursorKind.INTEGER_LITERAL 15
+############################## 16
+187 29 CursorKind.UNEXPOSED_EXPR 14
+187 29 CursorKind.DECL_REF_EXPR 15
+############################## 16
+187 34 CursorKind.UNEXPOSED_EXPR 12
+187 34 CursorKind.INTEGER_LITERAL 13
+############################## 14
+188 17 CursorKind.BINARY_OPERATOR 11
+188 17 CursorKind.BINARY_OPERATOR 12
+188 17 CursorKind.BINARY_OPERATOR 13
+188 17 CursorKind.UNEXPOSED_EXPR 14
+188 17 CursorKind.INTEGER_LITERAL 15
+############################## 16
+188 20 CursorKind.UNEXPOSED_EXPR 14
+188 20 CursorKind.DECL_REF_EXPR 15
+############################## 16
+188 25 CursorKind.BINARY_OPERATOR 13
+188 25 CursorKind.UNEXPOSED_EXPR 14
+188 25 CursorKind.INTEGER_LITERAL 15
+############################## 16
+188 28 CursorKind.UNEXPOSED_EXPR 14
+188 28 CursorKind.DECL_REF_EXPR 15
+############################## 16
+188 33 CursorKind.UNEXPOSED_EXPR 12
+188 33 CursorKind.INTEGER_LITERAL 13
+############################## 14
+189 17 CursorKind.BINARY_OPERATOR 10
+189 17 CursorKind.UNEXPOSED_EXPR 11
+189 17 CursorKind.UNEXPOSED_EXPR 12
+189 17 CursorKind.DECL_REF_EXPR 13
+############################## 14
+189 26 CursorKind.UNEXPOSED_EXPR 11
+189 26 CursorKind.DECL_REF_EXPR 12
+############################## 13
+190 14 CursorKind.COMPOUND_STMT 7
+191 17 CursorKind.BINARY_OPERATOR 8
+191 17 CursorKind.DECL_REF_EXPR 9
+############################## 10
+191 33 CursorKind.UNEXPOSED_EXPR 9
+191 33 CursorKind.DECL_REF_EXPR 10
+############################## 11
+193 17 CursorKind.BINARY_OPERATOR 8
+193 17 CursorKind.DECL_REF_EXPR 9
+############################## 10
+193 22 CursorKind.UNEXPOSED_EXPR 9
+193 22 CursorKind.INTEGER_LITERAL 10
+############################## 11
+196 9 CursorKind.IF_STMT 4
+196 13 CursorKind.BINARY_OPERATOR 5
+196 13 CursorKind.UNEXPOSED_EXPR 6
+196 13 CursorKind.UNEXPOSED_EXPR 7
+196 13 CursorKind.DECL_REF_EXPR 8
+############################## 9
+196 28 CursorKind.UNEXPOSED_EXPR 6
+196 28 CursorKind.DECL_REF_EXPR 7
+############################## 8
+196 40 CursorKind.COMPOUND_STMT 5
+197 13 CursorKind.IF_STMT 6
+197 16 CursorKind.BINARY_OPERATOR 7
+197 16 CursorKind.UNEXPOSED_EXPR 8
+197 16 CursorKind.DECL_REF_EXPR 9
+############################## 10
+197 21 CursorKind.FLOATING_LITERAL 8
+############################## 9
+197 25 CursorKind.COMPOUND_STMT 7
+198 17 CursorKind.BINARY_OPERATOR 8
+198 17 CursorKind.DECL_REF_EXPR 9
+############################## 10
+198 33 CursorKind.UNEXPOSED_EXPR 9
+198 33 CursorKind.DECL_REF_EXPR 10
+############################## 11
+199 17 CursorKind.BINARY_OPERATOR 8
+199 17 CursorKind.DECL_REF_EXPR 9
+############################## 10
+199 32 CursorKind.UNEXPOSED_EXPR 9
+199 32 CursorKind.DECL_REF_EXPR 10
+############################## 11
+201 17 CursorKind.BINARY_OPERATOR 8
+201 17 CursorKind.DECL_REF_EXPR 9
+############################## 10
+201 23 CursorKind.BINARY_OPERATOR 9
+201 23 CursorKind.UNEXPOSED_EXPR 10
+201 23 CursorKind.DECL_REF_EXPR 11
+############################## 12
+201 27 CursorKind.UNEXPOSED_EXPR 10
+201 27 CursorKind.INTEGER_LITERAL 11
+############################## 12
+204 9 CursorKind.IF_STMT 4
+204 13 CursorKind.BINARY_OPERATOR 5
+204 13 CursorKind.UNEXPOSED_EXPR 6
+204 13 CursorKind.UNEXPOSED_EXPR 7
+204 13 CursorKind.DECL_REF_EXPR 8
+############################## 9
+204 28 CursorKind.UNEXPOSED_EXPR 6
+204 28 CursorKind.DECL_REF_EXPR 7
+############################## 8
+204 41 CursorKind.COMPOUND_STMT 5
+############################## 6
+207 9 CursorKind.IF_STMT 4
+207 13 CursorKind.BINARY_OPERATOR 5
+207 13 CursorKind.UNEXPOSED_EXPR 6
+207 13 CursorKind.UNEXPOSED_EXPR 7
+207 13 CursorKind.DECL_REF_EXPR 8
+############################## 9
+207 28 CursorKind.UNEXPOSED_EXPR 6
+207 28 CursorKind.DECL_REF_EXPR 7
+############################## 8
+207 33 CursorKind.COMPOUND_STMT 5
+208 13 CursorKind.IF_STMT 6
+209 17 CursorKind.BINARY_OPERATOR 7
+209 17 CursorKind.BINARY_OPERATOR 8
+209 17 CursorKind.PAREN_EXPR 9
+209 18 CursorKind.BINARY_OPERATOR 10
+209 18 CursorKind.BINARY_OPERATOR 11
+209 18 CursorKind.BINARY_OPERATOR 12
+209 18 CursorKind.BINARY_OPERATOR 13
+209 18 CursorKind.UNEXPOSED_EXPR 14
+209 18 CursorKind.INTEGER_LITERAL 15
+############################## 16
+209 21 CursorKind.UNEXPOSED_EXPR 14
+209 21 CursorKind.DECL_REF_EXPR 15
+############################## 16
+209 26 CursorKind.BINARY_OPERATOR 13
+209 26 CursorKind.UNEXPOSED_EXPR 14
+209 26 CursorKind.INTEGER_LITERAL 15
+############################## 16
+209 29 CursorKind.UNEXPOSED_EXPR 14
+209 29 CursorKind.DECL_REF_EXPR 15
+############################## 16
+209 34 CursorKind.UNEXPOSED_EXPR 12
+209 34 CursorKind.INTEGER_LITERAL 13
+############################## 14
+209 40 CursorKind.BINARY_OPERATOR 11
+209 40 CursorKind.UNEXPOSED_EXPR 12
+209 40 CursorKind.UNEXPOSED_EXPR 13
+209 40 CursorKind.DECL_REF_EXPR 14
+############################## 15
+209 47 CursorKind.UNEXPOSED_EXPR 12
+209 47 CursorKind.INTEGER_LITERAL 13
+############################## 14
+210 17 CursorKind.PAREN_EXPR 9
+210 18 CursorKind.BINARY_OPERATOR 10
+210 18 CursorKind.BINARY_OPERATOR 11
+210 18 CursorKind.BINARY_OPERATOR 12
+210 18 CursorKind.BINARY_OPERATOR 13
+210 18 CursorKind.UNEXPOSED_EXPR 14
+210 18 CursorKind.INTEGER_LITERAL 15
+############################## 16
+210 21 CursorKind.UNEXPOSED_EXPR 14
+210 21 CursorKind.DECL_REF_EXPR 15
+############################## 16
+210 26 CursorKind.BINARY_OPERATOR 13
+210 26 CursorKind.UNEXPOSED_EXPR 14
+210 26 CursorKind.INTEGER_LITERAL 15
+############################## 16
+210 29 CursorKind.UNEXPOSED_EXPR 14
+210 29 CursorKind.DECL_REF_EXPR 15
+############################## 16
+210 34 CursorKind.UNEXPOSED_EXPR 12
+210 34 CursorKind.INTEGER_LITERAL 13
+############################## 14
+210 40 CursorKind.BINARY_OPERATOR 11
+210 40 CursorKind.UNEXPOSED_EXPR 12
+210 40 CursorKind.UNEXPOSED_EXPR 13
+210 40 CursorKind.DECL_REF_EXPR 14
+############################## 15
+210 47 CursorKind.UNEXPOSED_EXPR 12
+210 47 CursorKind.INTEGER_LITERAL 13
+############################## 14
+211 17 CursorKind.PAREN_EXPR 8
+211 18 CursorKind.BINARY_OPERATOR 9
+211 18 CursorKind.BINARY_OPERATOR 10
+211 18 CursorKind.UNEXPOSED_EXPR 11
+211 18 CursorKind.UNEXPOSED_EXPR 12
+211 18 CursorKind.DECL_REF_EXPR 13
+############################## 14
+211 25 CursorKind.UNEXPOSED_EXPR 11
+211 25 CursorKind.INTEGER_LITERAL 12
+############################## 13
+211 30 CursorKind.BINARY_OPERATOR 10
+211 30 CursorKind.UNEXPOSED_EXPR 11
+211 30 CursorKind.UNEXPOSED_EXPR 12
+211 30 CursorKind.DECL_REF_EXPR 13
+############################## 14
+211 37 CursorKind.UNEXPOSED_EXPR 11
+211 37 CursorKind.INTEGER_LITERAL 12
+############################## 13
+212 14 CursorKind.COMPOUND_STMT 7
+213 17 CursorKind.BINARY_OPERATOR 8
+213 17 CursorKind.DECL_REF_EXPR 9
+############################## 10
+213 33 CursorKind.UNEXPOSED_EXPR 9
+213 33 CursorKind.DECL_REF_EXPR 10
+############################## 11
+215 17 CursorKind.BINARY_OPERATOR 8
+215 17 CursorKind.DECL_REF_EXPR 9
+############################## 10
+215 22 CursorKind.UNEXPOSED_EXPR 9
+215 22 CursorKind.INTEGER_LITERAL 10
+############################## 11
+219 5 CursorKind.BINARY_OPERATOR 2
+219 7 CursorKind.MEMBER_REF_EXPR 3
+219 5 CursorKind.DECL_REF_EXPR 4
+############################## 5
+219 14 CursorKind.UNEXPOSED_EXPR 3
+219 14 CursorKind.DECL_REF_EXPR 4
+############################## 5
+220 5 CursorKind.BINARY_OPERATOR 2
+220 7 CursorKind.MEMBER_REF_EXPR 3
+220 5 CursorKind.DECL_REF_EXPR 4
+############################## 5
+220 15 CursorKind.UNEXPOSED_EXPR 3
+220 15 CursorKind.DECL_REF_EXPR 4
+############################## 5
+221 5 CursorKind.BINARY_OPERATOR 2
+221 7 CursorKind.MEMBER_REF_EXPR 3
+221 5 CursorKind.DECL_REF_EXPR 4
+############################## 5
+221 13 CursorKind.UNEXPOSED_EXPR 3
+221 13 CursorKind.DECL_REF_EXPR 4
+############################## 5
+222 5 CursorKind.RETURN_STMT 2
+222 12 CursorKind.UNEXPOSED_EXPR 3
+222 12 CursorKind.DECL_REF_EXPR 4
+############################## 5

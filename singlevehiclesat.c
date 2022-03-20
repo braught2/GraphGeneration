@@ -12,7 +12,7 @@ enum modes mode;
 struct State P(struct State s) {
 	double tau = s.tau;
 	double yf = s.yf;
-	double thetaf = s.theta;
+	double thetaf = s.thetaf;
 	enum modes state = s.mode;
 	if (s.mode==Normal) {
 		if (-0.155914*yf-thetaf <= -0.60871) {
@@ -35,7 +35,6 @@ struct State P(struct State s) {
                 }
 	}
 	
-	}
 	s.mode = state;
 	return s;
 
