@@ -26,7 +26,8 @@ class codeParser:
     def __init__(self):
         self.mode_kw_dict = {}
         self.mode_kw_order = {}
-
+        self.mode_variable_dict = {}
+    
     #get the structs
     def filter_node_list_by_node_kind(self,
         nodes: typing.Iterable[clang.cindex.Cursor],
@@ -60,13 +61,26 @@ class codeParser:
         result = []
         field_declarations = self.filter_node_list_by_node_kind(cursor.get_children(), [clang.cindex.CursorKind.FIELD_DECL])
         for cursor in field_declarations:
-            if list(cursor.get_tokens())[0].spelling == "enum":
-                continue
             if not self.is_exposed_field(cursor):
+                continue
+            if list(cursor.get_tokens())[0].spelling == "enum":
                 continue
             result.append(cursor.displayname)
         return result
 
+    def find_all_exposed_enums(
+        self, 
+        cursor: clang.cindex.Cursor
+    ):
+        result = []
+        field_declarations = self.filter_node_list_by_node_kind(cursor.get_children(), [clang.cindex.CursorKind.FIELD_DECL])
+        for cursor in field_declarations:
+            if not self.is_exposed_field(cursor):
+                continue
+            if list(cursor.get_tokens())[0].spelling != "enum":
+                continue
+            result.append(cursor.displayname)
+        return result
 
     def populate_field_list_recursively(self, class_name: str,class_field_map,class_inheritance_map):
         field_list = class_field_map.get(class_name)
@@ -78,7 +92,22 @@ class codeParser:
         return field_list
     #rtti_map = {}
 
-    def get_state_variables(self, translation_unit):
+    def get_discrete_state_variables(self, translation_unit):
+        rtti_map = {}
+        source_nodes = self.filter_node_list_by_file(translation_unit.cursor.get_children(), translation_unit.spelling)
+        state_classes = self.filter_node_list_by_node_kind(source_nodes, [clang.cindex.CursorKind.STRUCT_DECL])[0]
+        mode_variable_dict = {} # Dict{mode_variable_name:mode_variable_type}
+        for elem_cursor in state_classes.get_children():
+            if elem_cursor.kind == clang.cindex.CursorKind.FIELD_DECL:
+                if self.is_exposed_field(elem_cursor):
+                    if self.get_variable_type(elem_cursor) == "enum":
+                        kw = list(elem_cursor.get_tokens())[1].spelling
+                        variable_name = list(elem_cursor.get_tokens())[2].spelling
+                        mode_variable_dict[variable_name] = kw
+        self.mode_variable_dict = mode_variable_dict
+        return mode_variable_dict        
+
+    def get_continuous_state_variables(self, translation_unit):
         rtti_map = {}
         source_nodes = self.filter_node_list_by_file(translation_unit.cursor.get_children(), translation_unit.spelling)
         all_classes = self.filter_node_list_by_node_kind(source_nodes, [clang.cindex.CursorKind.STRUCT_DECL])
@@ -322,7 +351,7 @@ class codeParser:
             mode_str = list(condition_cursor.get_tokens())[2].spelling
             node_list.append((node, [mode_str]))
         while node_list:
-            par_node, prev_mode_str = node_list.pop()
+            par_node, prev_mode_str = node_list.pop(0)
             for node in par_node.child_node:
                 if node.child_node:
                     cursor = node.cursor
@@ -386,6 +415,95 @@ class codeParser:
                     for i in range(num_dest_kw, len(code_cursors)):
                         reset_cursor = code_cursors[i]
                         edge_resets += (self.code_from_cursor_raw(reset_cursor)+";")
+                    if edge_resets != "" and edge_resets[-1] == ";":
+                        edge_resets=edge_resets[:-1]
+                    edge.append([edge_src_idx, edge_dest_idx])
+                    guards.append(edge_guard)
+                    resets.append(edge_resets)
+        guards = self.pretty_guards(guards)
+        return mode_list, edge, guards, resets                   
+
+    def extract_transitions3(self, root: if_tree_node):
+        mode_list = self.extract_all_modes(self.mode_kw_dict)
+        num_kw = len(self.mode_kw_dict)
+        node_list = []
+        edge = []
+        guards = []
+        resets = []
+
+        for node in root.child_node:
+            cursor = node.cursor
+            condition_cursor = list(cursor.get_children())[0]
+            mode_str = list(condition_cursor.get_tokens())[2].spelling
+            node_list.append((node, [mode_str]))
+        while node_list:
+            par_node, prev_mode_str = node_list.pop(0)
+            for node in par_node.child_node:
+                if node.child_node:
+                    cursor = node.cursor
+                    if cursor.kind == clang.cindex.CursorKind.IF_STMT:
+                        condition_cursor = list(cursor.get_children())[0]
+                        mode_str = list(condition_cursor.get_tokens())[2].spelling
+                        node_list.append((node, prev_mode_str + [mode_str]))
+                else:
+                    cursor = node.cursor 
+
+                    # Get the source of the edge
+                    if len(prev_mode_str) < num_kw:
+                        raise ValueError("Insufficient number of keywords to determine transition source")
+                    edge_src = self.generate_mode_str_from_kw(prev_mode_str)
+                    edge_src_idx = mode_list.index(edge_src)
+                    curr_mode_dict = {}
+                    for val in prev_mode_str:
+                        for key in self.mode_kw_dict:
+                            if val in self.mode_kw_dict[key]:
+                                curr_mode_dict[key] = val 
+                                break
+
+                    # Get the guard for the edge
+                    edge_guard_cursor = list(cursor.get_children())[0]
+                    guard_str = self.code_from_cursor_raw(edge_guard_cursor)
+                    edge_guard = guard_str 
+
+                    # Get the destination of the edge
+                    compound_cursor = list(cursor.get_children())[1]
+                    code_cursors = list(compound_cursor.get_children())
+                    dest_mode_kw = []
+                    appeared_key = []
+                    num_dest_kw = 0
+                    for i in range(len(code_cursors)):
+                        line_cursor = code_cursors[i]
+                        if line_cursor.kind == clang.cindex.CursorKind.BINARY_OPERATOR:
+                            variable = list(line_cursor.get_tokens())[0].spelling
+                            if variable in self.mode_variable_dict:
+                                key = self.mode_variable_dict[variable]
+                                val = list(line_cursor.get_tokens())[2].spelling
+                                appeared_key.append(key)
+                                dest_mode_kw.append(val)
+                    all_keys = self.mode_kw_dict.keys()
+                    missing_key = all_keys - appeared_key
+                    for key in missing_key:
+                        dest_mode_kw.append(curr_mode_dict[key])
+                    edge_dest = self.generate_mode_str_from_kw(dest_mode_kw)
+                    edge_dest_idx = mode_list.index(edge_dest)
+                    # for i in range(num_kw):
+                    #     guard_cursor = code_cursors[i]
+                    #     dest_mode_kw += [list(guard_cursor.get_tokens())[2].spelling]
+                    # edge_dest = dest_mode_kw[0]
+                    # for i in range(1,len(dest_mode_kw)):
+                    #     edge_dest = edge_dest+";"+dest_mode_kw[i]
+                    # if edge_dest not in mode_list:
+                    #     mode_list.append(edge_dest)
+                    # edge_dest_idx = mode_list.index(edge_dest)
+
+                    # Get the resets for the edge
+                    edge_resets = ""
+                    for i in range(0, len(code_cursors)):
+                        reset_cursor = code_cursors[i]
+                        if reset_cursor.kind == clang.cindex.CursorKind.BINARY_OPERATOR:
+                            variable = list(reset_cursor.get_tokens())[0].spelling
+                            if variable not in self.mode_variable_dict:
+                                edge_resets += (self.code_from_cursor_raw(reset_cursor)+";")
                     if edge_resets != "" and edge_resets[-1] == ";":
                         edge_resets=edge_resets[:-1]
                     edge.append([edge_src_idx, edge_dest_idx])
@@ -562,6 +680,26 @@ class codeParser:
         self.mode_kw_dict = mode_kw_dict
         return mode_kw_dict
 
+    def get_variable_type(self, cursor:clang.cindex.Cursor):
+        return list(cursor.get_tokens())[0].spelling
+
+    def extract_mode_variable(self, root_cursor:clang.cindex.Cursor):
+        function_decl_cursor = self.filter_node_list_by_node_kind(root_cursor.get_children(), [clang.cindex.CursorKind.FUNCTION_DECL])[0]
+        function_body_cursor = self.filter_node_list_by_node_kind(function_decl_cursor.get_children(), [clang.cindex.CursorKind.COMPOUND_STMT])[0]
+        variable_decleration_cursors = self.filter_node_list_by_node_kind(function_body_cursor.get_children(), [clang.cindex.CursorKind.DECL_STMT])
+        mode_variable_cursors = []
+        for variable_decleration_cursor in variable_decleration_cursors:
+            if self.get_variable_type(variable_decleration_cursor) == "enum":
+                mode_variable_cursors.append(variable_decleration_cursor)
+
+        mode_variable_dict = {} # Dict{mode_variable_name:mode_variable_type}
+        for mode_variable_cursor in mode_variable_cursors:
+            kw = list(mode_variable_cursor.get_tokens())[1].spelling
+            variable_name = list(mode_variable_cursor.get_tokens())[2].spelling
+            mode_variable_dict[variable_name] = kw
+        self.mode_variable_dict = mode_variable_dict
+        return mode_variable_dict
+
     def extract_all_modes(self, mode_kw_dict):
         all_lists = []
         for key in mode_kw_dict:
@@ -622,11 +760,13 @@ if __name__ == "__main__":
 
     #add each variable in state struct as variable
     code_parser = codeParser()
-    variables = code_parser.get_state_variables(translation_unit)
+    variables = code_parser.get_continuous_state_variables(translation_unit)
     output_dict['variables'] = variables
 
     mode_kw_dict = code_parser.extract_mode_kw(translation_unit.cursor)
     print(mode_kw_dict)
+    mode_variable_dict = code_parser.get_discrete_state_variables(translation_unit)
+    print(mode_variable_dict)
 
     root = code_parser.extract_if_tree(translation_unit.cursor)
 
@@ -638,7 +778,7 @@ if __name__ == "__main__":
     modes = code_parser.extract_all_modes(mode_kw_dict)
     print(modes)
 
-    mode_list, edges, guards, resets = code_parser.extract_transitions2(root)
+    mode_list, edges, guards, resets = code_parser.extract_transitions3(root)
     print(mode_list)
     print(edges)
     print(guards)

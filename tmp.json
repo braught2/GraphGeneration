@@ -36,7 +36,7 @@
     ],
     "timeHorizon": 40.0,
     "directory": "examples/circular_tracking_threelanes_explicit",
-    "initialVertex": 6,
+    "initialVertex": 1,
     "deterministic": true,
     "variables": [
         "tau1",
@@ -55,105 +55,63 @@
         "v3"
     ],
     "edge": [
-        [
-            11,
-            2
-        ],
-        [
-            5,
-            1
-        ],
-        [
-            2,
-            5
-        ],
-        [
-            2,
-            11
-        ],
-        [
-            10,
-            1
-        ],
-        [
-            7,
-            2
-        ],
-        [
-            4,
-            0
-        ],
-        [
-            1,
-            4
-        ],
-        [
-            1,
-            7
-        ],
-        [
-            1,
-            10
-        ],
-        [
-            9,
-            0
-        ],
-        [
-            6,
-            1
-        ],
-        [
-            0,
-            6
-        ],
-        [
-            0,
-            9
-        ]
+        [0,6],
+        [0,9],
+        [6,1],
+        [9,0],
+        [1,4],
+        [1,7],
+        [1,10],
+        [4,0],
+        [7,2],
+        [10,1],
+        [2,5],
+        [2,11],
+        [5,1],
+        [11,2]
     ],
     "guards": [
-        "Or(And(lane2!=2,lane1!=2),Or(And(lane2==2,30*tau2-30*tau3>40),And(lane1==2,30*tau1-30*tau3>40)))",
-        "yf3>=2.5",
-        "Or(And(Or(tau3-tau1>10/30,Or(lane1!=1,30*tau1-30*tau3>40)),And(lane2==2,And(30*tau2-30*tau3>10,30*tau2-30*tau3<20))),And(Or(tau3-tau2>10/30,Or(lane2!=1,30*tau2-30*tau3>40)),And(lane1==2,And(30*tau1-30*tau3>10,30*tau1-30*tau3<20))))",
-        "Or(And(lane2==2,And(30*tau2-30*tau3>0,30*tau2-30*tau3<5)),And(lane1==2,And(30*tau1-30*tau3>0,30*tau1-30*tau3<5)))",
-        "Or(And(lane2!=1,lane1!=1),Or(And(lane2==1,30*tau2-30*tau3>40),And(lane1==1,30*tau1-30*tau3>40)))",
+        "Or(And(Or(tau3-tau1>10/30,Or(lane1!=1,30*tau1-30*tau3>40)),And(lane2==0,And(30*tau2-30*tau3>10,30*tau2-30*tau3<20))),And(Or(tau3-tau2>10/30,Or(lane2!=1,30*tau2-30*tau3>40)),And(lane1==0,And(30*tau1-30*tau3>10,30*tau1-30*tau3<20))))",
+        "Or(And(lane2==0,And(30*tau2-30*tau3>0,30*tau2-30*tau3<5)),And(lane1==0,And(30*tau1-30*tau3>0,30*tau1-30*tau3<5)))",
         "yf3<=-2.5",
-        "yf3>=2.5",
+        "Or(And(lane2!=0,lane1!=0),Or(And(lane2==0,30*tau2-30*tau3>40),And(lane1==0,30*tau1-30*tau3>40)))",
         "Or(And(Or(tau3-tau1>10/30,Or(lane1!=0,30*tau1-30*tau3>40)),And(lane2==1,And(30*tau2-30*tau3>10,30*tau2-30*tau3<21))),And(Or(tau3-tau2>10/30,Or(lane2!=0,30*tau2-30*tau3>40)),And(lane1==1,And(30*tau1-30*tau3>10,30*tau1-30*tau3<21))))",
         "Or(And(Or(tau3-tau1>10/30,Or(lane1!=2,30*tau1-30*tau3>40)),And(lane2==1,And(30*tau2-30*tau3>10,30*tau2-30*tau3<20))),And(Or(tau3-tau2>10/30,Or(lane2!=2,30*tau2-30*tau3>40)),And(lane1==1,And(30*tau1-30*tau3>10,30*tau1-30*tau3<20))))",
         "Or(And(lane2==1,And(30*tau2-30*tau3>0,30*tau2-30*tau3<5)),And(lane1==1,And(30*tau1-30*tau3>0,30*tau1-30*tau3<5)))",
-        "Or(And(lane2!=0,lane1!=0),Or(And(lane2==0,30*tau2-30*tau3>40),And(lane1==0,30*tau1-30*tau3>40)))",
+        "yf3>=2.5",
         "yf3<=-2.5",
-        "Or(And(Or(tau3-tau1>10/30,Or(lane1!=1,30*tau1-30*tau3>40)),And(lane2==0,And(30*tau2-30*tau3>10,30*tau2-30*tau3<20))),And(Or(tau3-tau2>10/30,Or(lane2!=1,30*tau2-30*tau3>40)),And(lane1==0,And(30*tau1-30*tau3>10,30*tau1-30*tau3<20))))",
-        "Or(And(lane2==0,And(30*tau2-30*tau3>0,30*tau2-30*tau3<5)),And(lane1==0,And(30*tau1-30*tau3>0,30*tau1-30*tau3<5)))"
+        "Or(And(lane2!=1,lane1!=1),Or(And(lane2==1,30*tau2-30*tau3>40),And(lane1==1,30*tau1-30*tau3>40)))",
+        "Or(And(Or(tau3-tau1>10/30,Or(lane1!=1,30*tau1-30*tau3>40)),And(lane2==2,And(30*tau2-30*tau3>10,30*tau2-30*tau3<20))),And(Or(tau3-tau2>10/30,Or(lane2!=1,30*tau2-30*tau3>40)),And(lane1==2,And(30*tau1-30*tau3>10,30*tau1-30*tau3<20))))",
+        "Or(And(lane2==2,And(30*tau2-30*tau3>0,30*tau2-30*tau3<5)),And(lane1==2,And(30*tau1-30*tau3>0,30*tau1-30*tau3<5)))",
+        "yf3>=2.5",
+        "Or(And(lane2!=2,lane1!=2),Or(And(lane2==2,30*tau2-30*tau3>40),And(lane1==2,30*tau1-30*tau3>40)))"
     ],
     "resets": [
-        "v3=4",
-        "yf3=yf3-3",
         "",
         "v3=0",
-        "v3=4",
         "yf3=yf3+3",
-        "yf3=yf3-3",
+        "v3=4",
         "",
         "",
         "v3=0",
-        "v3=4",
+        "yf3=yf3-3",
         "yf3=yf3+3",
+        "v3=4",
         "",
-        "v3=0"
+        "v3=0",
+        "yf3=yf3-3",
+        "v3=4"
     ],
     "vertex": [
         "Straight;Lane0",
         "Straight;Lane1",
         "Straight;Lane2",
-        "Switch_left;Lane0",
-        "Switch_left;Lane1",
-        "Switch_left;Lane2",
-        "Switch_right;Lane0",
-        "Switch_right;Lane1",
-        "Switch_right;Lane2",
+        "Turn_left;Lane0",
+        "Turn_left;Lane1",
+        "Turn_left;Lane2",
+        "Turn_right;Lane0",
+        "Turn_right;Lane1",
+        "Turn_right;Lane2",
         "Stop;Lane0",
         "Stop;Lane1",
         "Stop;Lane2"
