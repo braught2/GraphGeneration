@@ -35,7 +35,7 @@
         ]
     ],
     "timeHorizon": 40.0,
-    "directory": "examples/circular_tracking_threelanes_explicit3",
+    "directory": "examples/circular_tracking_threelanes_explicit",
     "initialVertex": 6,
     "deterministic": true,
     "variables": [
@@ -56,60 +56,60 @@
     ],
     "edge": [
         [
-            0,
-            2
-        ],
-        [
-            1,
-            6
-        ],
-        [
-            2,
-            1
-        ],
-        [
-            2,
-            0
-        ],
-        [
-            3,
-            6
-        ],
-        [
-            4,
+            11,
             2
         ],
         [
             5,
-            9
+            1
         ],
         [
-            6,
+            2,
             5
         ],
         [
-            6,
-            4
+            2,
+            11
         ],
         [
-            6,
-            3
+            10,
+            1
         ],
         [
             7,
-            9
+            2
         ],
         [
-            8,
+            4,
+            0
+        ],
+        [
+            1,
+            4
+        ],
+        [
+            1,
+            7
+        ],
+        [
+            1,
+            10
+        ],
+        [
+            9,
+            0
+        ],
+        [
+            6,
+            1
+        ],
+        [
+            0,
             6
         ],
         [
-            9,
-            8
-        ],
-        [
-            9,
-            7
+            0,
+            9
         ]
     ],
     "guards": [
@@ -145,15 +145,17 @@
         "v3=0"
     ],
     "vertex": [
-        "Lane2;Stop",
-        "Lane2;Switch_left",
-        "Lane2;Straight",
-        "Lane1;Stop",
-        "Lane1;Switch_right",
-        "Lane1;Switch_left",
-        "Lane1;Straight",
-        "Lane0;Stop",
-        "Lane0;Switch_right",
-        "Lane0;Straight"
+        "Straight;Lane0",
+        "Straight;Lane1",
+        "Straight;Lane2",
+        "Switch_left;Lane0",
+        "Switch_left;Lane1",
+        "Switch_left;Lane2",
+        "Switch_right;Lane0",
+        "Switch_right;Lane1",
+        "Switch_right;Lane2",
+        "Stop;Lane0",
+        "Stop;Lane1",
+        "Stop;Lane2"
     ]
 }
