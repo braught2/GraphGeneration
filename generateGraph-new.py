@@ -50,8 +50,6 @@ class codeParser:
                 result.append(i)
         return result
 
-
-
     #captured fields in classes
     def is_exposed_field(self, node):return node.access_specifier == clang.cindex.AccessSpecifier.PUBLIC
     def find_all_exposed_fields(
