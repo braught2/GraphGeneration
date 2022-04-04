@@ -1,10 +1,10 @@
-from ourtool.map import Map, StaticMap
+from ourtool.map import LaneMap, SingleStraightLaneMap
 from ourtool.scenario import Scenario
 from ourtool.models import InteractiveCar, NPCCar
 
 modes:"ModeParam" = ["Normal", "Brake", "Stop"]
 
-def controller(ego_state: InteractiveCar, npcs_state: NPCCar, map: Map):
+def controller(ego_state: InteractiveCar, npcs_state: NPCCar, map: LaneMap):
     if ego_state.x == "Normal":
         if npcs_state.x - ego_state.x < 20 and npcs_state.x - ego_state.x > 10:
             ego_state.vehicle_mode = "Brake"
@@ -20,10 +20,11 @@ def controller(ego_state: InteractiveCar, npcs_state: NPCCar, map: Map):
             ego_state.vehicle_mode = "Normal"
     
 if __name__ == "__main__":
-    map = StaticMap()
+    map = SingleStraightLaneMap()
     scenario = Scenario(Map = map)
-    ego_car = InteractiveCar()
+    ego_car = InteractiveCar('./controller_simple2.py')
     npc_car = NPCCar()
-    scenario.add(ego_car)
-    scenario.add(npc_car)
+    scenario.add_agent(ego_car)
+    scenario.add_agent(npc_car)
+    scenario.compose()
     # controller(ego_state, npcs_state, None)

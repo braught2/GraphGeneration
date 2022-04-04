@@ -2,7 +2,8 @@ import numpy as np
 from scipy.integrate import ode
 from typing import List 
 
-from ourtool.map.Map import Map
+from ourtool.map import Map
+from ourtool.models import BaseAgent
 
 def dynamic(t, state, u):
     x, y, theta, v = state
@@ -13,8 +14,9 @@ def dynamic(t, state, u):
     v_dot = a 
     return [x_dot, y_dot, theta_dot, v_dot]
 
-class NPCCar:
+class NPCCar(BaseAgent):
     def __init__(self, id:int = None):
+        super().__init__()
         self.x:float = None
         self.y:float = None 
         self.theta:float = None 

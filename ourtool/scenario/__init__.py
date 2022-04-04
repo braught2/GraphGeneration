@@ -1,4 +1,4 @@
-try:
-    from Scenario import *
-except:
-    from ourtool.scenario.Scenario import *
+# try:
+#     from Scenario import *
+# except:
+#     from ourtool.scenario.Scenario import *

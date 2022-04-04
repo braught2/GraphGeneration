@@ -2,7 +2,8 @@ import numpy as np
 from scipy.integrate import ode
 from typing import List 
 
-from ourtool.map.Map import Map
+from ourtool.map import Map
+from ourtool.models import BaseAgent
 
 def dynamic(t, state, u):
     x, y, theta, v = state
@@ -13,8 +14,9 @@ def dynamic(t, state, u):
     v_dot = a 
     return [x_dot, y_dot, theta_dot, v_dot]
 
-class InteractiveCar:
+class InteractiveCar(BaseAgent):
     def __init__(self, controller = None, id:int = None):
+        super().__init__()
         self.x:float = None
         self.y:float = None 
         self.theta:float = None 
@@ -26,8 +28,10 @@ class InteractiveCar:
         self.state_variable_continuous = ['x','y','theta','v']
         self.state_variable_discrete = ['vehicle_model','vehicle_lane']
 
-        self.controller = controller
+        self.controller_fn = controller
         self.id = id
+
+        self.dynamics = "ourtool/models/InteractiveCar"
 
     # @staticmethod
 def TC_Simulate(Mode: str, initialCondition: List[float], time_bound: float):
