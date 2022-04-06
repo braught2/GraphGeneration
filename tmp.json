@@ -1,0 +1,67 @@
+{
+    "variables": [
+        "ego_x",
+        "ego_y",
+        "ego_theta",
+        "ego_v0",
+        "other_x",
+        "other_y",
+        "other_theta",
+        "other_v"
+    ],
+    "edge": [
+        [
+            0,
+            1
+        ],
+        [
+            0,
+            2
+        ],
+        [
+            1,
+            2
+        ],
+        [
+            1,
+            0
+        ],
+        [
+            2,
+            0
+        ]
+    ],
+    "guards": [
+        "And(other_x-ego_x<20, other_x-ego_x>10)",
+        "And(other_x-ego_x<10, other_x-ego_x>-5)",
+        "And(other_x-ego_x<10, other_x-ego_x>-5)",
+        "Or(other_x-ego_x>30, other_x-ego_x<-5)",
+        "Or(other_x-ego_x>30, other_x-ego_x<-5)"
+    ],
+    "resets": [
+        "",
+        "",
+        "",
+        "",
+        ""
+    ],
+    "vertex": [
+        "Normal,Lane0;Normal,Lane0",
+        "Break,Lane0;Normal,Lane0",
+        "Stop,Lane0;Normal,Lane0"
+    ],
+    "directory": {
+        "ourtool/models/InteractiveCar": [
+            "ego_x",
+            "ego_y",
+            "ego_theta",
+            "ego_v0"
+        ],
+        "ourtool/models/NPCCar": [
+            "other_x",
+            "other_y",
+            "other_theta",
+            "other_v"
+        ]
+    }
+}

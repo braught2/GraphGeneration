@@ -2,8 +2,8 @@ import numpy as np
 from scipy.integrate import ode
 from typing import List 
 
-from ourtool.map import Map
-from ourtool.models import BaseAgent
+from ourtool.map.lane_map import LaneMap
+from ourtool.models.base_agent import BaseAgent
 
 def dynamic(t, state, u):
     x, y, theta, v = state
