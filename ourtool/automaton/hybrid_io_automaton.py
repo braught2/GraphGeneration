@@ -3,9 +3,11 @@ from ourtool.automaton.hybrid_automaton import HybridAutomaton
 class HybridIoAutomaton(HybridAutomaton):
     def __init__(
         self,
+        id = None, 
         input_variables = [],
         output_variables = [],
         internal_variables = [],
+        discrete_variables = [],
         modes = [],
         edges = [],
         guards = [],
@@ -13,7 +15,9 @@ class HybridIoAutomaton(HybridAutomaton):
         dynamics = {}
     ):
         super().__init__(
+            id, 
             output_variables+internal_variables,
+            discrete_variables,
             modes,
             edges,
             guards,

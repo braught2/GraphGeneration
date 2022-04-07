@@ -12,10 +12,6 @@
     "edge": [
         [
             0,
-            1
-        ],
-        [
-            0,
             2
         ],
         [
@@ -32,14 +28,12 @@
         ]
     ],
     "guards": [
-        "And(other_x-ego_x<20, other_x-ego_x>10)",
-        "And(other_x-ego_x<10, other_x-ego_x>-5)",
-        "And(other_x-ego_x<10, other_x-ego_x>-5)",
-        "Or(other_x-ego_x>30, other_x-ego_x<-5)",
-        "Or(other_x-ego_x>30, other_x-ego_x<-5)"
+        "And(other_x-ego_x>-5,other_x-ego_x<10)",
+        "And(other_x-ego_x>-5,other_x-ego_x<10)",
+        "Or(other_x-ego_x<-5,other_x-ego_x>30)",
+        "Or(other_x-ego_x<-5,other_x-ego_x>30)"
     ],
     "resets": [
-        "",
         "",
         "",
         "",

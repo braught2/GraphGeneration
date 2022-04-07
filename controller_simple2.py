@@ -7,11 +7,11 @@ from ourtool.models.base_agent import BaseAgent
 from ourtool.models.InteractiveCar import InteractiveCar
 from ourtool.models.NPCCar import NPCCar
 
-modes:"ModeParam" = ["Normal", "Brake", "Stop"]
+# modes:"ModeParam" = ["Normal", "Brake", "Stop"]
 
 def controller(ego_state: InteractiveCar, other_state: NPCCar, map: LaneMap):
     if ego_state.x == "Normal":
-        if other_state.x - ego_state.x < 20 and other_state.x - ego_state.x > 10:
+        if other_state.x - ego_state.x < 20 and other_state.x - ego_state.x > 10 and ego_state.vehicle_lane==other_state.vehicle_lane:
             ego_state.vehicle_mode = "Brake"
         if other_state.x - ego_state.x < 10 and other_state.x - ego_state.x > -5:
             ego_state.vehicle_mode = "Stop"

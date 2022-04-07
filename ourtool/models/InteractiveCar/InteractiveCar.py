@@ -56,7 +56,7 @@ def TC_Simulate(Mode: str, initialCondition: List[float], time_bound: float):
             r = ode(dynamic)    
             r.set_initial_value(init).set_f_params([steering, a])      
             res = r.integrate(r.t + time_step)
-            init = res.flatten.tolist()
+            init = res.flatten().tolist()
             trace.append([t[i] + time_step] + init)  
     elif vehicle_mode == "Brake":
         for i in range(len(t)):
@@ -69,7 +69,7 @@ def TC_Simulate(Mode: str, initialCondition: List[float], time_bound: float):
             r = ode(dynamic)    
             r.set_initial_value(init).set_f_params([steering, a])      
             res = r.integrate(r.t + time_step)
-            init = res.flatten.tolist()
+            init = res.flatten().tolist()
             trace.append([t[i] + time_step] + init)  
     elif vehicle_mode == "Accel":
         for i in range(len(t)):
@@ -82,7 +82,7 @@ def TC_Simulate(Mode: str, initialCondition: List[float], time_bound: float):
             r = ode(dynamic)    
             r.set_initial_value(init).set_f_params([steering, a])      
             res = r.integrate(r.t + time_step)
-            init = res.flatten.tolist()
+            init = res.flatten().tolist()
             trace.append([t[i] + time_step] + init)  
     elif vehicle_mode == "Stop":
         for i in range(len(t)):
@@ -95,7 +95,7 @@ def TC_Simulate(Mode: str, initialCondition: List[float], time_bound: float):
             r = ode(dynamic)    
             r.set_initial_value(init).set_f_params([steering, a])      
             res = r.integrate(r.t + time_step)
-            init = res.flatten.tolist()
+            init = res.flatten().tolist()
             trace.append([t[i] + time_step] + init)  
     
     return np.array(trace) 

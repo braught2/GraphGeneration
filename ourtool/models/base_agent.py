@@ -7,3 +7,6 @@ class BaseAgent:
         self.id = None
 
         self.dynamics = None
+
+    def TC_Simulate(self, mode, initialSet, time_horizon):
+        raise NotImplementedError

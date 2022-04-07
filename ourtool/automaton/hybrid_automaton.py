@@ -3,13 +3,16 @@ from typing import List, Dict
 class HybridAutomaton:
     def __init__(
         self,
+        id = None,
         variables=[],
+        discrete_variables = [],
         modes=[],
         edges=[],
         guards=[],
         resets=[],
         dynamics={}
     ):
+        self.id = id
         self.variables = variables
         self.modes = modes
         self.edges = edges
@@ -17,6 +20,7 @@ class HybridAutomaton:
         self.resets = resets
         self.dynamics = dynamics
 
+        self.discrete_variables = discrete_variables
     
     def generate_automaton_json(self):
         automaton_dict = {}
