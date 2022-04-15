@@ -17,6 +17,12 @@ class Guard:
             self.construct_tree_from_str(logic_str)
 
     def logic_string_split(self, logic_string):
+        # Input:
+        #   logic_string: str, a python logic expression
+        # Output:
+        #   List[str], a list of string containing atomics, logic operator and brackets
+        # The function take a python logic expression and split the expression into brackets, atomics and logic operators
+        # logic_string = logic_string.replace(' ','')
         res = re.split('(and)',logic_string)
 
         tmp = []
@@ -36,12 +42,60 @@ class Guard:
 
         while("" in res) :
             res.remove("")
-
+        while(" " in res):
+            res.remove(" ")
         for i,sub_str in enumerate(res):
             res[i]= sub_str.strip(' ')
+
+        # Handle spurious brackets in the splitted string
+        # Get all the index of brackets pairs in the splitted string
+        # Construct brackets tree
+        # class BracketTreeNode:
+        #     def __init__(self):
+        #         self.left_idx = None 
+        #         self.right_idx = None 
+        #         self.child = []
+        bracket_stack = []
+        for i in range(len(res)):
+            if res[i] == "(":
+                bracket_stack.append(i)
+            elif res[i] == ")":
+                left_idx = bracket_stack.pop()
+                sub_list = res[left_idx:i+1]
+                # Check for each brackets pairs if there's any logic operators in between
+                # If no, combine things in between and the brackets together, reconstruct the list
+                if "and" not in sub_list and "or" not in sub_list:   
+                    res[left_idx] = "".join(sub_list)
+                    for j in range(left_idx+1,i+1):
+                        res[j] = ""
+
+        # For each pair of logic operator
+        start_idx = 0
+        end_idx = 0
+        for i in range(len(res)):
+            if res[i]!="(":
+                start_idx = i
+                break
+        
+        for i in range(len(res)):
+            if res[i] == "and" or res[i] == "or":
+                end_idx = i 
+                sub_list = res[start_idx:end_idx]
+                # Check if there's any dangling brackents in between. 
+                # If no, combine things between logic operators
+                if "(" not in sub_list and ")" not in sub_list:
+                    res[start_idx] = "".join(sub_list)
+                    for j in range(start_idx+1, end_idx):
+                        res[j] = ""
+                start_idx = end_idx + 1
+        while("" in res) :
+            res.remove("")
         return res 
 
     def construct_tree_from_str(self, logic_string:str):
+        # Convert an infix expression notation to an expression tree
+        # https://www.geeksforgeeks.org/program-to-convert-infix-notation-to-expression-tree/
+
         self.logic_string = logic_string
         logic_string = "(" + logic_string + ")"
         s = self.logic_string_split(logic_string)
@@ -181,5 +235,5 @@ class Guard:
 
 if __name__ == "__main__":
     tmp = Guard()
-    tmp.construct_tree_from_str('other_x-ego_x<20 and other_x-ego_x>10 and other_vehicle_lane==ego_vehicle_lane')
+    tmp.construct_tree_from_str('(other_x-ego_x<20) and other_x-ego_x>10 and other_vehicle_lane==ego_vehicle_lane')
     print("stop")
