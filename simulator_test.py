@@ -1,7 +1,13 @@
-from ourtool.simulator.simulator import Simulator
+import json
+import ast 
+
 import numpy as np
 from scipy.integrate import ode
 import matplotlib.pyplot as plt 
+
+from ourtool.simulator.simulator import Simulator
+from ourtool.automaton.guard import Guard
+from pythonparser import parse_code
 
 class Agent:
     def __init__(self, id):
@@ -70,7 +76,21 @@ class Agent:
         return np.array(trace)
 
 class transition_graph:
+    def __init__(self, automaton):
+        self.automaton = automaton 
+
     def get_all_transition(self, state_dict):
+        # all_possible_transition = []
+        # for agent_id in state_dict:
+        #     agent_state, agent_mode = state_dict[agent_id]
+        #     agent_mode_idx = self.automaton['vertex'].index(agent_mode)
+        #     for edge_idx, edge in enumerate(self.automaton['edge']):
+        #         guard_str = self.automaton['guards']
+        #         guard = Guard(logic_str = guard_str)
+        #         src_mode = agent_mode 
+        #         dest_mode = self.automaton['vertex'][edge[1]] 
+
+
         agent1_state, agent1_mode = state_dict[0]
         x,y,theta,v = agent1_state[1:] 
         if x > 3 and x<5 and agent1_mode == "Normal,Lane0":
@@ -87,8 +107,24 @@ class transition_graph:
 if __name__ == "__main__":
     agent1 = Agent(0)
     agent2 = Agent(1)
-    tg = transition_graph()
+    tg = transition_graph(None)
     simulator = Simulator()
+
+    # input_code_name = 'toythermomini.py' #sys.argv[1]
+    # input_file_name = 'billiard_input.json' #sys.argv[2] 
+    # output_file_name = 'out.json' #sys.argv[3]
+
+    # with open(input_file_name) as in_json_file:
+    #     input_json = json.load(in_json_file)
+
+
+    # f = open(input_code_name,'r')
+    # code = f.read()
+    # tree = ast.parse(code)
+
+    # output_dict = parse_code(code, input_json)
+
+
     root = simulator.simulate(
         [[0,0,0,0.5],[1,0,0,0.5]],
         ['Normal,Lane0','Normal,Lane0'],

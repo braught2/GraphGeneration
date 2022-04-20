@@ -1,0 +1,61 @@
+{
+    "initialVertex": 0,
+    "initialSet": [
+        [
+            1.5,
+            0.0,
+            1.0,
+            1.0
+        ],
+        [
+            1.51,
+            0.0,
+            1.0,
+            1.0
+        ]
+    ],
+    "unsafeSet": "@Allmode:posy>=12.0",
+    "timeHorizon": 16,
+    "directory": "examples/billiard",
+    "deterministic": true,
+    "vertex": [
+        "NormalA",
+        "NormalB",
+        "NormalC",
+        "NormalD"
+    ],
+    "variables": [
+        "posx",
+        "posy"
+    ],
+    "edge": [
+        [
+            0,
+            0
+        ],
+        [
+            0,
+            1
+        ],
+        [
+            1,
+            0
+        ],
+        [
+            1,
+            1
+        ]
+    ],
+    "guards": [
+        "And(posy<0 , posy>=-0.0)",
+        "And(posy>10 , posy==-10)",
+        "And(posy<0 , posy>=-0.0)",
+        "And(posy>10 , posy==-10)"
+    ],
+    "resets": [
+        "posy=0",
+        "posy=10",
+        "posy=0",
+        "posy=10"
+    ]
+}
