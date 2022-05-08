@@ -84,10 +84,12 @@ class Guard(Statement):
             return Guard(ast.get_source_segment(code, node.test), None, None, None)
 
     '''
+    #TODO: test
     Function to convert a guard that contains any/all to a plain guard
     '''
     def toPlainGuard(self, num_others):
         #code = [statement, item, array]
+
         connector = 'and'
         if function == 'any':
             connector = 'or'
