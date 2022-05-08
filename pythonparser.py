@@ -42,8 +42,9 @@ class Statement:
 Guard class. Subclass of statement.
 '''
 class Guard(Statement):
-    def __init__(self, code, mode, modeType):
+    def __init__(self, code, mode, modeType, function):
         super().__init__(code, mode, modeType)
+        self.function = function
 
 
     '''
@@ -59,16 +60,43 @@ class Guard(Statement):
     '''
     def parseGuard(node, code):
         #assume guard is a strict comparision (modeType == mode)
+        #TODO: handle boolean operators, there may be an And between things and we need to parse both sides
         if isinstance(node.test, ast.Compare):
             if isinstance(node.test.comparators[0], ast.Attribute):
                 if ("Mode" in str(node.test.comparators[0].value.id)):
                     modeType = str(node.test.comparators[0].value.id)
                     mode = str(node.test.comparators[0].attr)
-                    return Guard(ast.get_source_segment(code, node.test), mode, modeType)
+                    return Guard(ast.get_source_segment(code, node.test), mode, modeType, None)
             else:
-                return Guard(ast.get_source_segment(code, node.test), None, None)
+                return Guard(ast.get_source_segment(code, node.test), None, None, None)
+        if isinstance(node.test, ast.Call):
+            print(node.test.func.id)
+            if node.test.func.id == 'any' or node.test.func.id == 'all':
+                print((node.test.args[0].elt))
+                print(node.test.args[0].generators[0].target.id)
+                print(node.test.args[0].generators[0].iter.id)
+            #if its a any/all thing
+            #if it has a Mode check in it
+                return Guard([ast.get_source_segment(code, node.test.args[0].elt),node.test.args[0].generators[0].target.id ,node.test.args[0].generators[0].iter.id  ], None, None, node.test.func.id)
         else:
-            return Guard(ast.get_source_segment(code, node.test), None, None)
+            print(ast.get_source_segment(code, node.test))
+            print(type(node.test))
+            return Guard(ast.get_source_segment(code, node.test), None, None, None)
+
+    '''
+    Function to convert a guard that contains any/all to a plain guard
+    '''
+    def toPlainGuard(self, num_others):
+        #code = [statement, item, array]
+        connector = 'and'
+        if function == 'any':
+            connector = 'or'
+        newguard = self.code[0].replace(self.code[1], self.code[2] + "[0]")
+        for i in range(1, num_others):
+            newguard = newguard + connector + self.code[0].replace(self.code[1], self.code[2] + "[" + i +"]")
+        self.code = newguard
+        self.function = None
+        return self
         
 '''
 Reset class. Subclass of statement.
@@ -263,12 +291,12 @@ class ControllerAst():
     A path is a list of statements, all guards and resets along the path. They are in the order they are encountered in the code.
     TODO: should we not force all modes be listed? Or rerun for each unknown/don't care node? Or add them all to the list
     '''
-    def getNextModes(self, currentModes, getAllPaths= False):
+    def getNextModes(self, currentModes, num_other_agents, getAllPaths= False):
         #walk the tree and capture all paths that have modes that are listed. Path is a list of statements
         paths = []
         rootid = self.statementtree.root
         currnode = self.statementtree.get_node(rootid)
-        paths = self.walkstatements(currnode, currentModes, getAllPaths)
+        paths = self.walkstatements(currnode, currentModes, getAllPaths, num_other_agents)
         
         return paths 
 
@@ -276,12 +304,18 @@ class ControllerAst():
     Helper function to walk the statement tree from parentnode and find paths that are allowed in the currentMode.
     Returns a list of paths. 
     '''
-    def walkstatements(self, parentnode, currentModes, getAllPaths):
+    def walkstatements(self, parentnode, currentModes, getAllPaths, num_other_agents):
         nextsPaths = []
 
         for node in self.statementtree.children(parentnode.identifier):
             statement = node.data
-            
+            if isinstance(statement[0], Guard):
+                if statement[0].function:
+                    #TODO: will this change the tree permanately or recompute each time?
+                    statement[0] = statement[0].toPlainGuard(num_other_agents)
+                #if its a function
+                #build the new guards and let it fall through the this code
+
             if isinstance(statement[0], Guard) and statement[0].isModeCheck():
                 if getAllPaths or statement[0].mode in currentModes:
                     #print(statement.mode)

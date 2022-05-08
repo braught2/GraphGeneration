@@ -14,6 +14,13 @@ class Scenario:
         self.init_dict = {}
         self.init_mode_dict = {}
 
+    #dummy function
+    def add_map(self, map):
+        return None
+
+    def set_sensor(self, sensor):
+        self.sensor = sensor
+
     def add_agent(self, agent:BaseAgent):
         self.agent_dict[agent.id] = agent
 
@@ -38,11 +45,12 @@ class Scenario:
         guard_hit = False
         satisfied_guard = []
         for agent_id in state_dict:
+            #TODO, use the sensor to get other states here
             agent:BaseAgent = self.agent_dict[agent_id]
             agent_state, agent_mode = state_dict[agent_id]
             t = agent_state[0]
             agent_state = agent_state[1:]
-            paths = agent.controller.getNextModes(agent_mode)
+            paths = agent.controller.getNextModes(agent_mode, len(self.agent_dict)-1)
             for path in paths:
                 guard_list = []
                 reset_list = []
@@ -57,12 +65,14 @@ class Scenario:
                 discrete_variable_dict = {}
                 agent_mode_split = agent_mode.split(',')
                 assert len(agent_mode_split)==len(agent.controller.discrete_variables)
+                #TODO: add sensor here!!, may need to talk to Yangge about architechure here to decide path forward, code will change with multi agent
                 for dis_var,dis_val in zip(agent.controller.discrete_variables, agent_mode_split):
                     for key in agent.controller.modes:
                         if dis_val in agent.controller.modes[key]:
                             tmp = key+'.'+dis_val
                             break
                     discrete_variable_dict[dis_var] = tmp
+                print(discrete_variable_dict)
                 guard_can_satisfy = guard_expression.execute_guard(discrete_variable_dict)
                 if guard_can_satisfy:
                     dryvr_guard_string = guard_expression.generate_guard_string_python()
