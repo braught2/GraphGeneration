@@ -39,7 +39,7 @@ def controller(ego:State):
                 output_vehicle_mode = VehicleMode.Normal
 
     return output_vehicle_mode, output_lane_mode
-        
+
 from src.example.example_agent.car_agent import CarAgent
 from src.scene_verifier.scenario.scenario import Scenario
 from src.example.example_map.simple_map import SimpleMap2
@@ -77,3 +77,5 @@ if __name__ == "__main__":
         # if node.child != []:
         queue += node.child 
     plt.show()
+
+
