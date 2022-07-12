@@ -114,25 +114,29 @@ class FakeSensor3:
 
 
 def set_states_2d_ball(cnts, disc, thing, val):
-    state, mode = val
+    state, mode, static = val
     sets(cnts, thing, ["x", "y", "vx", "vy"], state[1:5])
-    sets(disc, thing, ["ball_mode", "lane_mode"], mode)
+    sets(disc, thing, ["ball_mode", "lane_mode"], static)
+    sets(disc, thing, ["type"], mode)
 def set_states_3d_ball(cnts, disc, thing, val):
-    state, mode = val
+    state, mode, static = val
     transp = np.transpose(np.array(state)[:, 1:5])
     assert len(transp) == 4
     sets(cnts, thing, ["x", "y", "vx", "vy"], transp)
     sets(disc, thing, ["ball_mode", "lane_mode"], mode)
+    sets(disc, thing, ["type"], static)
 def add_states_2d_ball(cont, disc, thing, val):
-    state, mode = val
+    state, mode, static = val
     adds(cont, thing, ['x','y','vx','vy'], state[1:5])
-    adds(disc, thing, ["ball_mode", "lane_mode", "type"], mode)
+    adds(disc, thing, ["ball_mode", "lane_mode"], mode)
+    adds(disc, thing, ["type"], static)
 def add_states_3d_ball(cont, disc, thing, val):
-    state, mode = val
+    state, mode, static = val
     transp = np.transpose(np.array(state)[:, 1:5])
     assert len(transp) == 4
     adds(cont, thing, ['x','y','vx','vy'], transp)
-    adds(disc, thing, ["ball_mode", "lane_mode", "type"], mode)
+    adds(disc, thing, ["ball_mode", "lane_mode"], mode)
+    adds(disc, thing, ["type"], static)
 
 class FakeSensor4:
     def sense(self, scenario, agent, state_dict, lane_map):

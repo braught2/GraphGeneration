@@ -14,12 +14,12 @@ class State:
     y = 0.0
     vx = 0.0
     vy = 0.0
-    mode: BallMode
+    ball_mode: BallMode
     type: BallTypeMode
     def __init__(self, x, y, vx, vy, ball_mode:BallMode, type: BallTypeMode):
         pass
 
-def controller(ego:State, others:List[State]):
+def controller(ego:State):
     output = copy.deepcopy(ego)
     if ego.x<0:
         output.vx = -ego.vx
@@ -33,15 +33,6 @@ def controller(ego:State, others:List[State]):
     if ego.y>20:
         output.vy = -ego.vy
         output.y=20
-    def abs_diff(a, b):
-        if a < b:
-            r = b - a
-        else:
-            r = a - b
-        return r
-    def dist(a, b):
-        return abs_diff(a.x, b.x) + abs_diff(a.y, b.y)
-    assert all(dist(ego, o) > 5 for o in others)
     return output
 
 from dryvr_plus_plus.example.example_agent.ball_agent import BallAgent
@@ -56,23 +47,19 @@ if __name__ == "__main__":
     ball_controller = './demo/ball_bounces_dev.py'
     bouncingBall = Scenario()
     myball1 = BallAgent('red-ball', file_name=ball_controller)
-    myball2 = BallAgent('green-ball', file_name=ball_controller)
     bouncingBall.add_agent(myball1)
-    bouncingBall.add_agent(myball2)
     bouncingBall.set_init(
         [
             [[5, 10, 2, 2], [5, 10, 2, 2]],
-            [[15, 1, 1, -2], [15, 1, 1, -2]]
         ],
         [
             (BallMode.Normal,),
-            (BallMode.Normal,)
         ],
         [
             (BallTypeMode.TYPE1,),
-            (BallTypeMode.TYPE2,)
         ]
     )
+    # bouncingBall.set_sensor(FakeSensor4())
     traces = bouncingBall.simulate(10, 0.01)
     fig = go.Figure()
     fig = simulation_anime_trail(traces, fig=fig)
