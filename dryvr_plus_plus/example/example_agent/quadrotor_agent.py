@@ -88,14 +88,19 @@ class QuadrotorAgent(BaseAgent):
         ddone_flag = ddf
         return [dref_x, dref_y, dref_z, dx, dy, dz, dvx, dvy, dvz, dwaypoint, ddone_flag]
 
-    def action_handler(self,  state, lane_map: LaneMap_3d) -> Tuple[float, float]:
-        waypoint = state[-2]
-        df = 0
-        if lane_map.check_guard_box(state[3:9], waypoint):
-            df = 1
+    def action_handler(self, mode, state, lane_map: LaneMap_3d) -> Tuple[float, float]:
+        if mode == 'Follow_Waypoint':
+            waypoint = state[-2]
+            df = 0
+            if lane_map.check_guard_box(self.id, state[3:9], waypoint):
+                df = 1
+        if mode == 'Follow_Lane':
+            pass
+        else:
+            raise ValueError
         return df
 
-    def runModel(self, initalCondition, time_bound, time_step, ref_input, lane_map: LaneMap_3d):
+    def runModel(self, mode, initalCondition, time_bound, time_step, ref_input, lane_map: LaneMap_3d):
         init = initalCondition
         trajectory = [init]
         r = ode(self.dynamic)
@@ -135,7 +140,7 @@ class QuadrotorAgent(BaseAgent):
             idx = np.argmax(res)
             u = control_input_list[idx] + ref_input[0:3] + [sc]
 
-            df = self.action_handler(init, lane_map)
+            df = self.action_handler(mode[0], init, lane_map)
             u = u+[df]
             init = trajectory[i]  # len 11
             r = ode(self.dynamic)
@@ -161,18 +166,26 @@ class QuadrotorAgent(BaseAgent):
         # total time_bound remained
         time_bound = float(time_bound)
         initialCondition[-2] = int(initialCondition[-2])
-        time_bound = min(lane_map.get_timelimit_by_id(
-            initialCondition[-2]), time_bound)
-        # number_points = int(np.ceil(time_bound/time_step))
-        # todo
         if mode[0] == 'Follow_Waypoint':
-            mode_parameters = lane_map.get_waypoint_by_id(initialCondition[-2])
+            time_bound = min(lane_map.get_timelimit_by_id(self.id,
+                                                          initialCondition[-2]), time_bound)
+            mode_parameters = lane_map.get_waypoint_by_id(
+                self.id, initialCondition[-2])
             ref_vx = (mode_parameters[3] - mode_parameters[0]) / time_bound
             ref_vy = (mode_parameters[4] - mode_parameters[1]) / time_bound
             ref_vz = (mode_parameters[5] - mode_parameters[2]) / time_bound
             sym_rot_angle = 0
-            trace = self.runModel(mode_parameters[0:3] + list(initialCondition), time_bound, time_step, [ref_vx, ref_vy, ref_vz,
-                                                                                                         sym_rot_angle], lane_map)
+            trace = self.runModel(mode, mode_parameters[0:3] + list(initialCondition), time_bound, time_step, [ref_vx, ref_vy, ref_vz,
+                                                                                                               sym_rot_angle], lane_map)
+        if mode[0] == 'Follow_Lane':
+            mode_parameters = lane_map.get_waypoint_by_id(
+                self.id, initialCondition[-2])
+            if len(mode_parameters) == 3:
+                lane_map.get_next_point(mode[1], self.id, initialCondition[-2])
+            time_bound = min(lane_map.get_timelimit_by_id(self.id,
+                                                          initialCondition[-2]), time_bound)
+            pass
+
         return np.array(trace)
 
 # import json
