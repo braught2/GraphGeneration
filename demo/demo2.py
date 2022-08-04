@@ -79,7 +79,11 @@ if __name__ == "__main__":
     # # #                       2, 'lines', 'trace', print_dim_list=[1, 2])
     # fig.show()
     fig = go.Figure()
-    traces = scenario.verify(30, 1)
+    # traces = scenario.verify(30, 0.2)
+    path = os.path.abspath(__file__)
+    path = path.replace('demo2.py', 'output.json')
+    # write_json(traces, path)
+    traces = read_json(path)
     fig = reachtube_anime(traces, tmp_map, fig, 1,
-                          2, 'lines', 'trace', print_dim_list=[1, 2])
+                          2, 'lines', 'trace', print_dim_list=[1, 2], sample_rate=1, speed_rate=5)
     fig.show()

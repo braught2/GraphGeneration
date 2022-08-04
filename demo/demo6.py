@@ -92,8 +92,8 @@ if __name__ == "__main__":
             (LaneObjectMode.Vehicle,),
         ]
     )
-    traces = scenario.simulate(80, 0.05)
-    # traces = scenario.verify(80, 0.05)
+    # traces = scenario.simulate(80, 0.05)
+    traces = scenario.verify(80, 0.05)
 
     # fig = plt.figure(2)
     # fig = plot_map(tmp_map, 'g', fig)
@@ -106,6 +106,6 @@ if __name__ == "__main__":
     # plt.show()
 
     fig = go.Figure()
-    fig = simulation_anime(traces, tmp_map, fig, 1,
-                           2, 'lines', 'trace', print_dim_list=[1, 2])
+    fig = reachtube_anime(traces, tmp_map, fig, 1,
+                          2, 'lines', 'trace', print_dim_list=[1, 2], sample_rate=1)
     fig.show()

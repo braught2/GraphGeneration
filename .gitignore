@@ -10,3 +10,4 @@ dist/dryvr_plus_plus-0.1-py3.8.egg
 tmp/
 dist/
 demo/quadrotor/output.json
+demo/output.json
